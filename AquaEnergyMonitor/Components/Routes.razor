@@ -1,0 +1,13 @@
+﻿@using AquaEnergyMonitor.Components.Layout
+
+<Router AppAssembly="typeof(Program).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="routeData" />
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p>Página não encontrada</p>
+        </LayoutView>
+    </NotFound>
+</Router>

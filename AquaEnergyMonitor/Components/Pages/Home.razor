@@ -1,0 +1,52 @@
+﻿@page "/home"
+@using Radzen
+
+<header class="site-header">
+    <h3 class="header-title" style="display:inline;">AquaEnergyMonitor</h3>
+    <nav style="display:inline; float:right;">
+        <a href="/">Perfil</a>
+        <a href="/contato">Sair</a>
+    </nav>
+</header>
+
+<div class="aqua-container">
+    <h3 style="text-align:center;">Consumo de Água por Mês</h3>
+
+    <RadzenChart Style="width: 1000px; height: 300px; margin: 0 auto;">
+    <RadzenCategoryAxis>
+        <RadzenAxisTitle Text="Mês" />
+    </RadzenCategoryAxis>
+    <RadzenValueAxis>
+        <RadzenAxisTitle Text="Consumo (m³)" />
+    </RadzenValueAxis>
+
+    <RadzenLineSeries Data="@consumos"
+                        CategoryProperty="Mes"
+                        ValueProperty="MetrosCubicos"
+                        Title="Consumo de Água" />
+    </RadzenChart>
+</div>
+
+@code {
+    public class Consumo
+    {
+        public string Mes { get; set; }
+        public double MetrosCubicos { get; set; }
+    }
+
+    private List<Consumo> consumos = new()
+    {
+        new Consumo { Mes = "Jan", MetrosCubicos = 12.5 },
+        new Consumo { Mes = "Fev", MetrosCubicos = 10.3 },
+        new Consumo { Mes = "Mar", MetrosCubicos = 14.7 },
+        new Consumo { Mes = "Abr", MetrosCubicos = 13.2 },
+        new Consumo { Mes = "Mai", MetrosCubicos = 11.8 },
+        new Consumo { Mes = "Jun", MetrosCubicos = 15.1 },
+        new Consumo { Mes = "Jul", MetrosCubicos = 15.1 },
+        new Consumo { Mes = "Ago", MetrosCubicos = 15.1 },
+        new Consumo { Mes = "Set", MetrosCubicos = 15.1 },
+        new Consumo { Mes = "Out", MetrosCubicos = 15.1 },
+        new Consumo { Mes = "Nov", MetrosCubicos = 15.1 },
+        new Consumo { Mes = "Dez", MetrosCubicos = 15.1 },
+    };
+}

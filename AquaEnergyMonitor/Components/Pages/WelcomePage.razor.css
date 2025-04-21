@@ -1,0 +1,60 @@
+﻿.site-header {
+    background-color: steelblue;
+    height: 10vh;
+    padding: 23px 5% 0px 5%;
+}
+
+.header-title {
+    color: white;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    background-image: url('/images/hidreletrica.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.center-div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px 30px 10px 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 50%;
+    margin: 10vh auto;
+    height: 50vh;
+    font-size: 17px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.login-btn, .register-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.login-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.register-btn {
+    background-color: #ffc107;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #218838;
+}
+
+.register-btn:hover {
+    background-color: #e0a800;
+}

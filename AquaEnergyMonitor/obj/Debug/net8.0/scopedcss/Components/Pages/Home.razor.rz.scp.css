@@ -1,0 +1,19 @@
+.site-header[b-8wgba5kmuj] {
+    background-color: white;
+    height: 8vh;
+    border-bottom: 1px solid #A7A7A7;
+    padding: 18px 5% 0px 5%;
+    margin-bottom: 20px;
+}
+
+.header-title[b-8wgba5kmuj] {
+    color:aqua;
+}
+
+.aqua-container[b-8wgba5kmuj] {
+    width: 70%;
+    background-color:aliceblue;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+}

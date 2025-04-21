@@ -1,0 +1,37 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+<PageTitle>Home</PageTitle>
+
+<header class="site-header">
+    <h3 class="header-title" style="display:inline;">AquaEnergyMonitor</h3>
+</header>
+
+<main class="content">
+    <section class="center-div">
+        <h1>Bem vindo ao AquaEnergy Monitor!</h1>
+        <p>
+            O Aqua Energy Monitor é um sistema inteligente de monitoramento e conscientização do consumo de água e energia, 
+            projetado para ajudar residências, empresas e instituições a entenderem melhor seus hábitos de consumo e adotarem 
+            práticas mais sustentáveis. Para acessar as opções de login e cadastro, escolha abaixo:
+        </p>
+        <div class="buttons">
+            <button class="login-btn">Login</button>
+            <NavLink href="cadastro">
+            <button class="register-btn" href="/cadastro">Cadastro</button>
+            </NavLink>
+        </div>
+    </section>
+</main>
+
+@code {
+    void IrParaLogin()
+    {
+        Navigation.NavigateTo("/login");
+    }
+
+    void IrParaCadastro()
+    {
+        Navigation.NavigateTo("/cadastro");
+    }
+}
