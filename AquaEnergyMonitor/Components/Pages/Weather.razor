@@ -1,64 +1,71 @@
 ﻿@page "/weather"
-@attribute [StreamRendering]
+@implements IDisposable
 
-<PageTitle>Weather</PageTitle>
+<h2>Holodeck Configuration</h2>
 
-<h1>Weather</h1>
-
-<p>This component demonstrates showing data.</p>
-
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+<EditForm EditContext="editContext" OnValidSubmit="Submit" FormName="Starship8">
+    <div>
+        <label>
+            <InputCheckbox @bind-Value="Model!.Subsystem1" />
+            Safety Subsystem
+        </label>
+    </div>
+    <div>
+        <label>
+            <InputCheckbox @bind-Value="Model!.Subsystem2" />
+            Emergency Shutdown Subsystem
+        </label>
+    </div>
+    <div>
+        <ValidationMessage For="() => Model!.Options" />
+    </div>
+    <div>
+        <button type="submit">Update</button>
+    </div>
+</EditForm>
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private EditContext? editContext;
 
-    protected override async Task OnInitializedAsync()
+    [SupplyParameterFromForm]
+    private Holodeck? Model { get; set; }
+
+    private ValidationMessageStore? messageStore;
+
+    protected override void OnInitialized()
     {
-        // Simulate asynchronous loading to demonstrate streaming rendering
-        await Task.Delay(500);
-
-        var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
-        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = summaries[Random.Shared.Next(summaries.Length)]
-        }).ToArray();
+        Model ??= new();
+        editContext = new(Model);
+        editContext.OnValidationRequested += HandleValidationRequested;
+        messageStore = new(editContext);
     }
 
-    private class WeatherForecast
+    private void HandleValidationRequested(object? sender,
+        ValidationRequestedEventArgs args)
     {
-        public DateOnly Date { get; set; }
-        public int TemperatureC { get; set; }
-        public string? Summary { get; set; }
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        messageStore?.Clear();
+
+        // Custom validation logic
+        if (!Model!.Options)
+        {
+            messageStore?.Add(() => Model.Options, "Select at least one.");
+        }
+    }
+
+    private void Submit() => Console.WriteLine("Submit: Processing form");
+
+    public class Holodeck
+    {
+        public bool Subsystem1 { get; set; }
+        public bool Subsystem2 { get; set; }
+        public bool Options => Subsystem1 || Subsystem2;
+    }
+
+    public void Dispose()
+    {
+        if (editContext is not null)
+        {
+            editContext.OnValidationRequested -= HandleValidationRequested;
+        }
     }
 }

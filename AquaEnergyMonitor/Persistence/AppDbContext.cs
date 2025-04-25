@@ -7,6 +7,6 @@ namespace AquaEnergyMonitor.Persistence
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<ConsumoAgua> Consumos { get; set; }
+        public DbSet<Usuario> Usuarios => Set<Usuario>();
     }
 }

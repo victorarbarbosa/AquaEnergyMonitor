@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\victo\\OneDrive\\Área de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj": {}
+    "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\victo\\OneDrive\\Área de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj": {
+    "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\victo\\OneDrive\\Área de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj",
+        "projectUniqueName": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj",
         "projectName": "AquaEnergyMonitor",
-        "projectPath": "C:\\Users\\victo\\OneDrive\\Área de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj",
-        "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\victo\\OneDrive\\Área de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\obj\\",
+        "projectPath": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj",
+        "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,13 +39,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -74,6 +69,16 @@
               "target": "Package",
               "version": "[9.0.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
             "Radzen.Blazor": {
               "target": "Package",
               "version": "[6.6.1, )"
@@ -98,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

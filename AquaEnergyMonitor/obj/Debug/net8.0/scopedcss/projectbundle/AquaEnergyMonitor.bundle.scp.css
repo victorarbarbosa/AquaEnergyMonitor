@@ -251,7 +251,7 @@ main[b-zyyam2wft5] {
     background-color: white;
     height: 8vh;
     border-bottom: 1px solid #A7A7A7;
-    padding: 18px 5% 0px 5%;
+    padding: 2.7vh 5% 0px 5%;
     margin-bottom: 20px;
 }
 
@@ -266,11 +266,35 @@ main[b-zyyam2wft5] {
     border-radius: 5px;
     padding: 10px;
 }
+/* _content/AquaEnergyMonitor/Components/Pages/Login.razor.rz.scp.css */
+.page-background[b-fjj905fwh8] {
+    background-image: url('/images/hidreletrica.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    padding: 1rem;
+}
+
+.login-container[b-fjj905fwh8] {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 40px;
+    width: 500px;
+    margin: 80px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    height: 350px;
+}
+
+form .form-control[b-fjj905fwh8] {
+    margin-bottom: 15px;
+}
 /* _content/AquaEnergyMonitor/Components/Pages/WelcomePage.razor.rz.scp.css */
 .site-header[b-qql5wbv4ug] {
     background-color: steelblue;
-    height: 10vh;
-    padding: 23px 5% 0px 5%;
+    height: 8vh;
+    padding: 2.6vh 5% 0px 5%;
 }
 
 .header-title[b-qql5wbv4ug] {
@@ -280,7 +304,7 @@ main[b-zyyam2wft5] {
 .content[b-qql5wbv4ug] {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 92vh;
     background-image: url('/images/hidreletrica.jpg');
     background-size: cover;
     background-position: center;
@@ -293,7 +317,7 @@ main[b-zyyam2wft5] {
     text-align: center;
     width: 50%;
     margin: 10vh auto;
-    height: 50vh;
+    height: 300px;
     font-size: 17px;
 }
 

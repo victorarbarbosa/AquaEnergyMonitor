@@ -1,7 +1,7 @@
 .site-header[b-qql5wbv4ug] {
     background-color: steelblue;
-    height: 10vh;
-    padding: 23px 5% 0px 5%;
+    height: 8vh;
+    padding: 2.6vh 5% 0px 5%;
 }
 
 .header-title[b-qql5wbv4ug] {
@@ -11,7 +11,7 @@
 .content[b-qql5wbv4ug] {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 92vh;
     background-image: url('/images/hidreletrica.jpg');
     background-size: cover;
     background-position: center;
@@ -24,7 +24,7 @@
     text-align: center;
     width: 50%;
     margin: 10vh auto;
-    height: 50vh;
+    height: 300px;
     font-size: 17px;
 }
 

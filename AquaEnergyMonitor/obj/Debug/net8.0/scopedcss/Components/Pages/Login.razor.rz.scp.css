@@ -1,0 +1,23 @@
+.page-background[b-fjj905fwh8] {
+    background-image: url('/images/hidreletrica.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    padding: 1rem;
+}
+
+.login-container[b-fjj905fwh8] {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 40px;
+    width: 500px;
+    margin: 80px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    height: 350px;
+}
+
+form .form-control[b-fjj905fwh8] {
+    margin-bottom: 15px;
+}

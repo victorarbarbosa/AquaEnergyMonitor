@@ -1,9 +1,18 @@
 using AquaEnergyMonitor.Components;
+using AquaEnergyMonitor.Persistence;
+using AquaEnergyMonitor.Services;
+using Microsoft.EntityFrameworkCore;
 using Radzen;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<TooltipService>();
+
+// Program.cs (Blazor Server)
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=users.db"));
+
+builder.Services.AddScoped<AuthService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
