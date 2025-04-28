@@ -3,6 +3,7 @@ using AquaEnergyMonitor.Persistence;
 using AquaEnergyMonitor.Services;
 using Microsoft.EntityFrameworkCore;
 using Radzen;
+using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,9 @@ builder.Services.AddScoped<AuthService>();
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddScoped<Radzen.ThemeService>();
+builder.Services.AddScoped<Radzen.TooltipService>();
 
 var app = builder.Build();
 

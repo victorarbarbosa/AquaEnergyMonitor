@@ -58,8 +58,31 @@
     </div>
 </div>
 
+@if (MostrarModalErro)
+{
+    <div class="modal show d-block" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Erro no Cadastro</h5>
+                    <button type="button" class="btn-close" @onclick="FecharModal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>@MensagemErro</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" @onclick="FecharModal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+   
+
 @code {
     public Usuario User { get; set; } = new();
+    private bool MostrarModalErro { get; set; }
+    private string MensagemErro { get; set; } = string.Empty;
 
     private async Task Cadastrar()
     {
@@ -68,5 +91,15 @@
         {
             NavManager.NavigateTo("/login");
         }
+        else
+        {
+            MensagemErro = "Este e-mail já está cadastrado. Tente fazer login ou use outro e-mail.";
+            MostrarModalErro = true;
+        }
+    }
+
+    private void FecharModal()
+    {
+        MostrarModalErro = false;
     }
 }

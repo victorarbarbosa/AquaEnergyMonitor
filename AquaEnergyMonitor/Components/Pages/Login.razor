@@ -1,11 +1,27 @@
 ﻿@page "/login"
+@rendermode InteractiveServer
+
+@using AquaEnergyMonitor.Models
+@using AquaEnergyMonitor.Services
+
+@inject AuthService Service
+@inject NavigationManager NavManager
 
 <div class="page-background">
     <div class="login-container text-center">
         <h2 class="mb-4">Login</h2>
-        <form>
-            <input type="email" class="form-control" placeholder="E-mail" required />
-            <input type="password" class="form-control" placeholder="Senha" required />
+
+        <EditForm Model="@LoginModel" OnValidSubmit="Logar" FormName="Login">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <InputText @bind-Value="LoginModel.Email" class="form-control mb-2" placeholder="E-mail" />
+            <InputText @bind-Value="LoginModel.Senha" type="password" class="form-control mb-2" placeholder="Senha" />
+
+            @if (!string.IsNullOrEmpty(Erro))
+            {
+                <div class="alert alert-danger mt-2">@Erro</div>
+            }
 
             <button type="submit" class="btn btn-primary w-100 mt-2">Entrar</button>
 
@@ -13,6 +29,24 @@
                 <span>Não tem uma conta?</span>
                 <a href="/cadastro" class="btn btn-outline-secondary btn-sm ms-2">Cadastrar</a>
             </div>
-        </form>
+        </EditForm>
     </div>
 </div>
+
+@code {
+    private LoginModel LoginModel { get; set; } = new();
+    private string Erro { get; set; }
+
+    private async Task Logar()
+    {
+        var sucesso = await Service.Login(LoginModel.Email, LoginModel.Senha);
+        if (sucesso)
+        {
+            NavManager.NavigateTo("/home");
+        }
+        else
+        {
+            Erro = "E-mail ou senha inválidos.";
+        }
+    }
+}

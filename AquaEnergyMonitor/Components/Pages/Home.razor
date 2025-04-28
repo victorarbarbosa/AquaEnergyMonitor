@@ -1,6 +1,8 @@
 ﻿@page "/home"
 @using Radzen
 
+@inject TooltipService tooltipService
+
 <header class="site-header">
     <h3 class="header-title" style="display:inline;">AquaEnergyMonitor</h3>
     <nav style="display:inline; float:right;">
@@ -13,17 +15,18 @@
     <h3 style="text-align:center;">Consumo de Água por Mês</h3>
 
     <RadzenChart Style="width: 1000px; height: 300px; margin: 0 auto;">
-    <RadzenCategoryAxis>
-        <RadzenAxisTitle Text="Mês" />
-    </RadzenCategoryAxis>
-    <RadzenValueAxis>
-        <RadzenAxisTitle Text="Consumo (m³)" />
-    </RadzenValueAxis>
+        <RadzenCategoryAxis>
+            <RadzenAxisTitle Text="Mês" />
+        </RadzenCategoryAxis>
+        <RadzenValueAxis>
+            <RadzenAxisTitle Text="Consumo (m³)" />
+        </RadzenValueAxis>
 
-    <RadzenLineSeries Data="@consumos"
-                        CategoryProperty="Mes"
-                        ValueProperty="MetrosCubicos"
-                        Title="Consumo de Água" />
+        <RadzenColumnSeries Data="@consumos"
+                            CategoryProperty="Mes"
+                            ValueProperty="MetrosCubicos"
+                            Title="Consumo de Água">
+        </RadzenColumnSeries>
     </RadzenChart>
 </div>
 
@@ -49,4 +52,10 @@
         new Consumo { Mes = "Nov", MetrosCubicos = 15.1 },
         new Consumo { Mes = "Dez", MetrosCubicos = 15.1 },
     };
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        StateHasChanged(); // Força a atualização
+    }
 }

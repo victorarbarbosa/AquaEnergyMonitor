@@ -2,12 +2,12 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Blazorise/1.7.5": {
+      "Blazorise/1.7.6": {
         "type": "package",
         "dependencies": {
           "Blazorise.Licensing": "1.3.0",
-          "Microsoft.AspNetCore.Components": "8.0.13",
-          "Microsoft.AspNetCore.Components.Web": "8.0.13",
+          "Microsoft.AspNetCore.Components": "8.0.15",
+          "Microsoft.AspNetCore.Components.Web": "8.0.15",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.3"
         },
         "compile": {
@@ -48,13 +48,34 @@
           "buildMultiTargeting/Blazorise.Bootstrap.props": {}
         }
       },
-      "Blazorise.Charts/1.7.5": {
+      "Blazorise.Bootstrap5/1.7.6": {
         "type": "package",
         "dependencies": {
-          "Blazorise": "1.7.5",
+          "Blazorise": "1.7.6",
+          "Microsoft.AspNetCore.Components": "8.0.15",
+          "Microsoft.AspNetCore.Components.Web": "8.0.15",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0/Blazorise.Bootstrap5.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Blazorise.Bootstrap5.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazorise.Bootstrap5.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Bootstrap5.props": {}
+        }
+      },
+      "Blazorise.Charts/1.7.6": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.7.6",
           "Lambda2Js": "3.1.4",
-          "Microsoft.AspNetCore.Components": "8.0.13",
-          "Microsoft.AspNetCore.Components.Web": "8.0.13",
+          "Microsoft.AspNetCore.Components": "8.0.15",
+          "Microsoft.AspNetCore.Components.Web": "8.0.15",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.3"
         },
         "compile": {
@@ -161,10 +182,10 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Authorization/8.0.13": {
+      "Microsoft.AspNetCore.Authorization/8.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Metadata": "8.0.13",
+          "Microsoft.AspNetCore.Metadata": "8.0.15",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.3",
           "Microsoft.Extensions.Options": "8.0.2"
         },
@@ -179,11 +200,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components/8.0.13": {
+      "Microsoft.AspNetCore.Components/8.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "8.0.13",
-          "Microsoft.AspNetCore.Components.Analyzers": "8.0.13"
+          "Microsoft.AspNetCore.Authorization": "8.0.15",
+          "Microsoft.AspNetCore.Components.Analyzers": "8.0.15"
         },
         "compile": {
           "lib/net8.0/Microsoft.AspNetCore.Components.dll": {
@@ -196,16 +217,16 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/8.0.13": {
+      "Microsoft.AspNetCore.Components.Analyzers/8.0.15": {
         "type": "package",
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Forms/8.0.13": {
+      "Microsoft.AspNetCore.Components.Forms/8.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "8.0.13"
+          "Microsoft.AspNetCore.Components": "8.0.15"
         },
         "compile": {
           "lib/net8.0/Microsoft.AspNetCore.Components.Forms.dll": {
@@ -218,14 +239,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Web/8.0.13": {
+      "Microsoft.AspNetCore.Components.Web/8.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "8.0.13",
-          "Microsoft.AspNetCore.Components.Forms": "8.0.13",
+          "Microsoft.AspNetCore.Components": "8.0.15",
+          "Microsoft.AspNetCore.Components.Forms": "8.0.15",
           "Microsoft.Extensions.DependencyInjection": "8.0.1",
           "Microsoft.Extensions.Primitives": "8.0.0",
-          "Microsoft.JSInterop": "8.0.13",
+          "Microsoft.JSInterop": "8.0.15",
           "System.IO.Pipelines": "8.0.0"
         },
         "compile": {
@@ -239,7 +260,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Metadata/8.0.13": {
+      "Microsoft.AspNetCore.Metadata/8.0.15": {
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.AspNetCore.Metadata.dll": {
@@ -947,7 +968,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.JSInterop/8.0.13": {
+      "Microsoft.JSInterop/8.0.15": {
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.JSInterop.dll": {
@@ -1145,6 +1166,129 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Blazor.Charts/29.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Blazor.Core": "29.1.39",
+          "Syncfusion.Blazor.Data": "29.1.39",
+          "Syncfusion.Blazor.DataVizCommon": "29.1.39",
+          "Syncfusion.ExcelExport.Net.Core": "29.1.39",
+          "Syncfusion.PdfExport.Net.Core": "29.1.39"
+        },
+        "compile": {
+          "lib/net8.0/Syncfusion.Blazor.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Blazor.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Blazor.Charts.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Syncfusion.Blazor.Charts.props": {}
+        }
+      },
+      "Syncfusion.Blazor.Core/29.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Syncfusion.Licensing": "29.1.39",
+          "System.Text.Json": "8.0.5"
+        },
+        "compile": {
+          "lib/net8.0/Syncfusion.Blazor.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Blazor.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Blazor.Core.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Syncfusion.Blazor.Core.props": {}
+        }
+      },
+      "Syncfusion.Blazor.Data/29.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Blazor.Core": "29.1.39"
+        },
+        "compile": {
+          "lib/net8.0/Syncfusion.Blazor.Data.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Blazor.Data.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Blazor.Data.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Syncfusion.Blazor.Data.props": {}
+        }
+      },
+      "Syncfusion.Blazor.DataVizCommon/29.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Blazor.Core": "29.1.39"
+        },
+        "compile": {
+          "lib/net8.0/Syncfusion.Blazor.DataVizCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Blazor.DataVizCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.ExcelExport.Net.Core/29.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.ExcelExport.Net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.ExcelExport.Net.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Licensing/29.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.PdfExport.Net.Core/29.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.PdfExport.Net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.PdfExport.Net.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.CodeDom/6.0.0": {
@@ -1426,16 +1570,16 @@
     }
   },
   "libraries": {
-    "Blazorise/1.7.5": {
-      "sha512": "ElYXMxkaBvZDZOJuRbsP3L2e3+2zMxuNYDMMb5r0jg8NnYXNHJmiwK0QhMi4ng1xxiYcfzKg4DOMJjmg5/xnMg==",
+    "Blazorise/1.7.6": {
+      "sha512": "RmJVJN7DJJYjDrI0qLThyR3JcOzoKvLMmoWkK6H06P8VKKKvL6FqVya1AK5WgRwh9ZUTrdd3c+83EgXSM0oC3g==",
       "type": "package",
-      "path": "blazorise/1.7.5",
+      "path": "blazorise/1.7.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Blazorise.png",
         "LICENSE.md",
-        "blazorise.1.7.5.nupkg.sha512",
+        "blazorise.1.7.6.nupkg.sha512",
         "blazorise.nuspec",
         "build/Blazorise.props",
         "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
@@ -1516,16 +1660,42 @@
         "staticwebassets/tooltip.js"
       ]
     },
-    "Blazorise.Charts/1.7.5": {
-      "sha512": "jcSf2kHCPblqFBE/49kl8CRF6xykeQjfOwgnnBGDnIkc6qbrU/ZjzvRyZlNARn6Aveto0Io+G0+pnSzsaRd6Fg==",
+    "Blazorise.Bootstrap5/1.7.6": {
+      "sha512": "79Rv41dS7lv6GKYwkNC0gTOnDMtYI60SwRxHWolN3yzDzMo4SimFsI+6HpdYY6DjGov7A/FWBLPYhkxlOdhmDw==",
       "type": "package",
-      "path": "blazorise.charts/1.7.5",
+      "path": "blazorise.bootstrap5/1.7.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Blazorise.png",
         "LICENSE.md",
-        "blazorise.charts.1.7.5.nupkg.sha512",
+        "blazorise.bootstrap5.1.7.6.nupkg.sha512",
+        "blazorise.bootstrap5.nuspec",
+        "build/Blazorise.Bootstrap5.props",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.Bootstrap5.props",
+        "buildTransitive/Blazorise.Bootstrap5.props",
+        "lib/net6.0/Blazorise.Bootstrap5.dll",
+        "lib/net7.0/Blazorise.Bootstrap5.dll",
+        "lib/net8.0/Blazorise.Bootstrap5.dll",
+        "lib/net9.0/Blazorise.Bootstrap5.dll",
+        "staticwebassets/blazorise.bootstrap5.css",
+        "staticwebassets/blazorise.bootstrap5.min.css",
+        "staticwebassets/modal.js",
+        "staticwebassets/tooltip.js"
+      ]
+    },
+    "Blazorise.Charts/1.7.6": {
+      "sha512": "rKabfvFKlWlFXcGghfuipw+vgF4hVIWwChO2yD0VATlDRztF5cIbGBhvgOEyvvQLjAqNORcuq9Q8kSvIe0bbMQ==",
+      "type": "package",
+      "path": "blazorise.charts/1.7.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.charts.1.7.6.nupkg.sha512",
         "blazorise.charts.nuspec",
         "build/Blazorise.Charts.props",
         "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
@@ -1667,10 +1837,10 @@
         "lib/netstandard2.0/Lambda2Js.xml"
       ]
     },
-    "Microsoft.AspNetCore.Authorization/8.0.13": {
-      "sha512": "cMdPz2hFN8fjEdUBelItljBrsbiz2eVspV5W5bee9c6OT4ChgprnHe7BKXYc3Wwzhxo/ls9XxcLuXZrfVCIT6Q==",
+    "Microsoft.AspNetCore.Authorization/8.0.15": {
+      "sha512": "AIpppyCOYv0hJjmYqytMSVohAV8THV6sTk7VoM6rHo1Jq0D1fOfkRi9lnmEz20nfKt50wX2OlciEQop3JlMC6A==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authorization/8.0.13",
+      "path": "microsoft.aspnetcore.authorization/8.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1682,14 +1852,14 @@
         "lib/net8.0/Microsoft.AspNetCore.Authorization.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.xml",
-        "microsoft.aspnetcore.authorization.8.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.authorization.8.0.15.nupkg.sha512",
         "microsoft.aspnetcore.authorization.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components/8.0.13": {
-      "sha512": "SIYJDi7/VYd4YRF72GGH3owUDvlnD39AGREgEKlLux89z54FIGapTj3P4qwdI+VOf7ycTfmzPMfVWFkSUbRM0Q==",
+    "Microsoft.AspNetCore.Components/8.0.15": {
+      "sha512": "eQIgPU1oTkqR8hWvDjyZFGBBtgPY4bYl4a/WN7g0txmoww+fbE1nZ4D+5MeSbZu1kfHWX/Ruog/pMF9zUX6D7g==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components/8.0.13",
+      "path": "microsoft.aspnetcore.components/8.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1697,14 +1867,14 @@
         "THIRD-PARTY-NOTICES.txt",
         "lib/net8.0/Microsoft.AspNetCore.Components.dll",
         "lib/net8.0/Microsoft.AspNetCore.Components.xml",
-        "microsoft.aspnetcore.components.8.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.components.8.0.15.nupkg.sha512",
         "microsoft.aspnetcore.components.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Analyzers/8.0.13": {
-      "sha512": "30bbr+LZVvCNd4Yd1IgYLsrk9EnO7X4ZqXTgDJKKQMdItAso29zddZ5s952TRljTatLRisdKS2Rd6eBYOwbOgQ==",
+    "Microsoft.AspNetCore.Components.Analyzers/8.0.15": {
+      "sha512": "Uqc/wecFqwfpC9bUK9DH3W3nrriRM6ZBL8OozV6GHNNgrqvzdnqsPKo3NcmjhokvMo2/XHTrreRC2yA2aTLS/A==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.analyzers/8.0.13",
+      "path": "microsoft.aspnetcore.components.analyzers/8.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1713,14 +1883,14 @@
         "analyzers/dotnet/cs/Microsoft.AspNetCore.Components.Analyzers.dll",
         "build/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
         "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
-        "microsoft.aspnetcore.components.analyzers.8.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.components.analyzers.8.0.15.nupkg.sha512",
         "microsoft.aspnetcore.components.analyzers.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Forms/8.0.13": {
-      "sha512": "747kk0/m4lWoK3thqUFwFwQx2nStgfgaB7oKHGbyl4O3M7AfoBS9Pxljd9COZCi+UGvpLLqFXkADKQWRcxwWrA==",
+    "Microsoft.AspNetCore.Components.Forms/8.0.15": {
+      "sha512": "579O5c3u0FXnOAjk6JNzcy+/+qazMbedAeOy1vT1B6CBYovG8iGJhyUukqCbHcNQq3/lqxBTyB9rFzlH5zOttA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.forms/8.0.13",
+      "path": "microsoft.aspnetcore.components.forms/8.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1728,14 +1898,14 @@
         "THIRD-PARTY-NOTICES.txt",
         "lib/net8.0/Microsoft.AspNetCore.Components.Forms.dll",
         "lib/net8.0/Microsoft.AspNetCore.Components.Forms.xml",
-        "microsoft.aspnetcore.components.forms.8.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.components.forms.8.0.15.nupkg.sha512",
         "microsoft.aspnetcore.components.forms.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Web/8.0.13": {
-      "sha512": "/oR/tw4a2Z3rPHVguTiE8GyWa/+SKsEbysd5DhuB6PdlX9B0l9+3j9zUFtoeIo0yONJAuQYGbhl5Y3l47mAowA==",
+    "Microsoft.AspNetCore.Components.Web/8.0.15": {
+      "sha512": "ttRxlR+yM0sNi+Ecw0ze26l2IcBIF2L+YNQGs4v159v+Ge51yn8bwehnlzs9MY5y3Xamvek4l71uZfk1oouYSA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.web/8.0.13",
+      "path": "microsoft.aspnetcore.components.web/8.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1743,14 +1913,14 @@
         "THIRD-PARTY-NOTICES.txt",
         "lib/net8.0/Microsoft.AspNetCore.Components.Web.dll",
         "lib/net8.0/Microsoft.AspNetCore.Components.Web.xml",
-        "microsoft.aspnetcore.components.web.8.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.components.web.8.0.15.nupkg.sha512",
         "microsoft.aspnetcore.components.web.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Metadata/8.0.13": {
-      "sha512": "V8HLO2Md9Vs/69FZ+kpXCyx9C0pnfMn/Mlnr35SctMEy3JVuaqkmb2Cn+K05n5uX8irVHOcql4ACMPK6tLuldA==",
+    "Microsoft.AspNetCore.Metadata/8.0.15": {
+      "sha512": "eKlqQasjNZD0B3thB+nX7kkpG/RiZlXObmjX+JurWycnssGp1q9iZjKn2SqKA45Pouw+529aQUYYP2/QCE5xIQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.metadata/8.0.13",
+      "path": "microsoft.aspnetcore.metadata/8.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1762,7 +1932,7 @@
         "lib/net8.0/Microsoft.AspNetCore.Metadata.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
-        "microsoft.aspnetcore.metadata.8.0.13.nupkg.sha512",
+        "microsoft.aspnetcore.metadata.8.0.15.nupkg.sha512",
         "microsoft.aspnetcore.metadata.nuspec"
       ]
     },
@@ -3287,10 +3457,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.JSInterop/8.0.13": {
-      "sha512": "lheEKaQvTD9YRn2g6evReg97Ia4whzHbOOoMBdLHPtO2Gs6e/ffx4+cKP+SCSEnmyi6Dc/Av75kxAJCiuQx8zA==",
+    "Microsoft.JSInterop/8.0.15": {
+      "sha512": "JQjYabj1o3M5rUp/GM8uVlLpgc9tgxZea+89IkvGl8AcY7Tfwn0Q5qltVa9rfm3mzCsr2ecVCKzWMSMYiXS0Kg==",
       "type": "package",
-      "path": "microsoft.jsinterop/8.0.13",
+      "path": "microsoft.jsinterop/8.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3298,7 +3468,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net8.0/Microsoft.JSInterop.dll",
         "lib/net8.0/Microsoft.JSInterop.xml",
-        "microsoft.jsinterop.8.0.13.nupkg.sha512",
+        "microsoft.jsinterop.8.0.15.nupkg.sha512",
         "microsoft.jsinterop.nuspec"
       ]
     },
@@ -3503,6 +3673,161 @@
         "lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll",
         "sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
         "sqlitepclraw.provider.e_sqlite3.nuspec"
+      ]
+    },
+    "Syncfusion.Blazor.Charts/29.1.39": {
+      "sha512": "O7qY2RN+fByM14amoS2FWV6iHcyEqyf5YNGcjUkZ79hxoMlYnS/mLGD79GON6Ptob8/Z/6MFbXbDC5j98IMFEw==",
+      "type": "package",
+      "path": "syncfusion.blazor.charts/29.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Syncfusion.Blazor.Charts.props",
+        "buildMultiTargeting/Syncfusion.Blazor.Charts.props",
+        "buildTransitive/Syncfusion.Blazor.Charts.props",
+        "lib/net8.0/Syncfusion.Blazor.Charts.dll",
+        "lib/net8.0/Syncfusion.Blazor.Charts.xml",
+        "lib/net9.0/Syncfusion.Blazor.Charts.dll",
+        "lib/net9.0/Syncfusion.Blazor.Charts.xml",
+        "staticwebassets/scripts/sf-accumulation-chart.min.js",
+        "staticwebassets/scripts/sf-chart.min.js",
+        "syncfusion.blazor.charts.29.1.39.nupkg.sha512",
+        "syncfusion.blazor.charts.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Blazor.Core/29.1.39": {
+      "sha512": "/iS7VLfg5KF2wapJH3zawanIi5Oez8IJ82e6L+DS/JMoV7SS+LVZFxt/faC9IL8PLnBwOWOVYaZcXQ9Hgu6U6Q==",
+      "type": "package",
+      "path": "syncfusion.blazor.core/29.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Syncfusion.Blazor.Core.props",
+        "buildMultiTargeting/Syncfusion.Blazor.Core.props",
+        "buildTransitive/Syncfusion.Blazor.Core.props",
+        "lib/net8.0/Syncfusion.Blazor.Core.dll",
+        "lib/net8.0/Syncfusion.Blazor.Core.xml",
+        "lib/net9.0/Syncfusion.Blazor.Core.dll",
+        "lib/net9.0/Syncfusion.Blazor.Core.xml",
+        "staticwebassets/scripts/popup.min.js",
+        "staticwebassets/scripts/popupsbase.min.js",
+        "staticwebassets/scripts/sf-svg-export.min.js",
+        "staticwebassets/scripts/svgbase.min.js",
+        "staticwebassets/scripts/syncfusion-blazor-base.min.js",
+        "staticwebassets/scripts/syncfusion-blazor.min.js",
+        "syncfusion.blazor.core.29.1.39.nupkg.sha512",
+        "syncfusion.blazor.core.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Blazor.Data/29.1.39": {
+      "sha512": "WwBVdKBRWYj6d/p0EIHNW7vOGtWvLlpP6rGVMnu3f1PaWgspYDYmYyQa22RRsvz7mL4lRHNI8qq1fGGQlIRUQw==",
+      "type": "package",
+      "path": "syncfusion.blazor.data/29.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Syncfusion.Blazor.Data.props",
+        "buildMultiTargeting/Syncfusion.Blazor.Data.props",
+        "buildTransitive/Syncfusion.Blazor.Data.props",
+        "lib/net8.0/Syncfusion.Blazor.Data.dll",
+        "lib/net8.0/Syncfusion.Blazor.Data.xml",
+        "lib/net9.0/Syncfusion.Blazor.Data.dll",
+        "lib/net9.0/Syncfusion.Blazor.Data.xml",
+        "staticwebassets/scripts/data.min.js",
+        "syncfusion.blazor.data.29.1.39.nupkg.sha512",
+        "syncfusion.blazor.data.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Blazor.DataVizCommon/29.1.39": {
+      "sha512": "t04dLT4nKfWftz9er40e1xLtOvl/uzdeHgOh+b3Pa8i5MuN4BMAqcZ6iEsotngAqu1/7SvjmOClc1uaE7dsbwg==",
+      "type": "package",
+      "path": "syncfusion.blazor.datavizcommon/29.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net8.0/Syncfusion.Blazor.DataVizCommon.dll",
+        "lib/net8.0/Syncfusion.Blazor.DataVizCommon.xml",
+        "lib/net9.0/Syncfusion.Blazor.DataVizCommon.dll",
+        "lib/net9.0/Syncfusion.Blazor.DataVizCommon.xml",
+        "syncfusion.blazor.datavizcommon.29.1.39.nupkg.sha512",
+        "syncfusion.blazor.datavizcommon.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.ExcelExport.Net.Core/29.1.39": {
+      "sha512": "RSAsCk0QPhuGJE6X2OXXlW+p64H6qTsgIfI87MyyqAZkcOEm50GhDhD6hQu3adisIi0czmy5+RFeCj0TCOPmxA==",
+      "type": "package",
+      "path": "syncfusion.excelexport.net.core/29.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net8.0/Syncfusion.ExcelExport.Net.dll",
+        "lib/net8.0/Syncfusion.ExcelExport.Net.xml",
+        "lib/net9.0/Syncfusion.ExcelExport.Net.dll",
+        "lib/net9.0/Syncfusion.ExcelExport.Net.xml",
+        "lib/netstandard2.0/Syncfusion.ExcelExport.Net.dll",
+        "lib/netstandard2.0/Syncfusion.ExcelExport.Net.xml",
+        "syncfusion.excelexport.net.core.29.1.39.nupkg.sha512",
+        "syncfusion.excelexport.net.core.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Licensing/29.1.39": {
+      "sha512": "WW+Gp+KOVl2+t0kwdUL6X6AaYRaSgOxnSuZ34hXVArTrKMAdDHTCykeE8ypJOJfZJitGn3LvR7aQtfTzuhhhUw==",
+      "type": "package",
+      "path": "syncfusion.licensing/29.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net462/Syncfusion.Licensing.dll",
+        "lib/net8.0/Syncfusion.Licensing.dll",
+        "lib/net9.0/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.29.1.39.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.PdfExport.Net.Core/29.1.39": {
+      "sha512": "RqiZsepcQad4PcUJMWKKITI+I1a+8zT6BMTmSSvJ9f3aPvjJDdQ1xVvCKO55Vnj81muiLw2YalqEo+Pqcn5oWw==",
+      "type": "package",
+      "path": "syncfusion.pdfexport.net.core/29.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net8.0/Syncfusion.PdfExport.Net.dll",
+        "lib/net8.0/Syncfusion.PdfExport.Net.xml",
+        "lib/net9.0/Syncfusion.PdfExport.Net.dll",
+        "lib/net9.0/Syncfusion.PdfExport.Net.xml",
+        "lib/netstandard2.0/Syncfusion.PdfExport.Net.dll",
+        "lib/netstandard2.0/Syncfusion.PdfExport.Net.xml",
+        "syncfusion.pdfexport.net.core.29.1.39.nupkg.sha512",
+        "syncfusion.pdfexport.net.core.nuspec",
+        "syncfusion_logo.png"
       ]
     },
     "System.CodeDom/6.0.0": {
@@ -3978,34 +4303,36 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Blazorise.Bootstrap >= 1.7.5",
-      "Blazorise.Charts >= 1.7.5",
+      "Blazorise.Bootstrap5 >= 1.7.6",
+      "Blazorise.Charts >= 1.7.6",
       "Blazorise.Icons.FontAwesome >= 1.7.5",
       "Blazorise.Licensing >= 1.3.0",
       "ChartJs.Blazor.Fork >= 2.0.2",
       "Microsoft.EntityFrameworkCore >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.4",
-      "Radzen.Blazor >= 6.6.1"
+      "Radzen.Blazor >= 6.6.1",
+      "Syncfusion.Blazor.Charts >= 29.1.39"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Victor\\.nuget\\packages\\": {},
+    "C:\\Users\\victo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj",
+      "projectUniqueName": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj",
       "projectName": "AquaEnergyMonitor",
-      "projectPath": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj",
-      "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\obj\\",
+      "projectPath": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor.csproj",
+      "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4014,7 +4341,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4027,7 +4353,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -4037,9 +4369,13 @@
             "target": "Package",
             "version": "[1.7.5, )"
           },
+          "Blazorise.Bootstrap5": {
+            "target": "Package",
+            "version": "[1.7.6, )"
+          },
           "Blazorise.Charts": {
             "target": "Package",
-            "version": "[1.7.5, )"
+            "version": "[1.7.6, )"
           },
           "Blazorise.Icons.FontAwesome": {
             "target": "Package",
@@ -4070,6 +4406,10 @@
           "Radzen.Blazor": {
             "target": "Package",
             "version": "[6.6.1, )"
+          },
+          "Syncfusion.Blazor.Charts": {
+            "target": "Package",
+            "version": "[29.1.39, )"
           }
         },
         "imports": [
@@ -4091,7 +4431,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
