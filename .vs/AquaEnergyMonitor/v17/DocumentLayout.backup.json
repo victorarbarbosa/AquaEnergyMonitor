@@ -1,66 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\",
+  "WorkspaceRootPath": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\cadastro.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\cadastro.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\cadastro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\cadastro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\welcomepage.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\welcomepage.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\welcomepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\welcomepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\cadastro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\cadastro.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\models\\consumoagua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\models\\consumoagua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\\u00E1rea de trabalho\\usjt\\repositorios\\aquaenergymonitor\\aquaenergymonitor\\aquaenergymonitor\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\cadastro.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\cadastro.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|c:\\users\\victo\\onedrive\\documentos\\repositorios\\aquaenergy\\aquaenergymonitor\\aquaenergymonitor\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E539B51C-CF93-403C-BB7A-4BAEEA4F373C}|AquaEnergyMonitor\\AquaEnergyMonitor.csproj|solutionrelative:aquaenergymonitor\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,15 +50,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\_Imports.razor",
+              "RelativeToolTip": "AquaEnergyMonitor\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwAsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T21:04:45.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T20:12:22.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\App.razor",
+              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\App.razor",
+              "RelativeToolTip": "AquaEnergyMonitor\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T23:44:12.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Program.cs",
+              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Program.cs",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Program.cs",
+              "RelativeToolTip": "AquaEnergyMonitor\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T23:36:52.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Services\\AuthService.cs",
+              "RelativeToolTip": "AquaEnergyMonitor\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T22:55:12.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T22:23:34.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Login.razor",
+              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\Login.razor",
+              "ViewState": "AgIAABwAAAAAAAAAAIBJwC4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T22:52:54.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Cadastro.razor.css",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor.css",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor.css",
               "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor.css",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor.css",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor.css",
               "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -87,171 +158,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Cadastro.razor",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-19T17:42:35.014Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WelcomePage.razor.css",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\WelcomePage.razor.css",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\WelcomePage.razor.css",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\WelcomePage.razor.css",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\WelcomePage.razor.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-18T21:24:17.184Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WelcomePage.razor",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\WelcomePage.razor",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\WelcomePage.razor",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\WelcomePage.razor",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\WelcomePage.razor",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA4AAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-18T21:23:24.955Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Home.razor.css",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Home.razor.css",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\Home.razor.css",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Home.razor.css",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\Home.razor.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-17T23:53:30.158Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
+              "Title": "Cadastro.razor",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor",
+              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor",
+              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\Cadastro.razor",
+              "ViewState": "AgIAAEsAAAAAAAAAAAArwE4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T22:23:34.943Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T22:46:18.888Z"
+              "WhenOpened": "2025-04-19T17:42:35.014Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Routes.razor",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Routes.razor",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Routes.razor",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Routes.razor",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Routes.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T22:51:30.158Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Persistence\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Persistence\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Persistence\\AppDbContext.cs",
-              "RelativeToolTip": "AquaEnergyMonitor\\Persistence\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T23:57:13.806Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T22:27:15.988Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Program.cs",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Program.cs",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Program.cs",
-              "RelativeToolTip": "AquaEnergyMonitor\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T22:45:38.044Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\_Imports.razor",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\_Imports.razor",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T22:18:32.994Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Counter.razor",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Counter.razor",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\Counter.razor",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Counter.razor",
-              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\Counter.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T22:42:24.967Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ConsumoAgua.cs",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Models\\ConsumoAgua.cs",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Models\\ConsumoAgua.cs",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Models\\ConsumoAgua.cs",
-              "RelativeToolTip": "AquaEnergyMonitor\\Models\\ConsumoAgua.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T23:52:47.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\victo\\OneDrive\\\u00C1rea de Trabalho\\USJT\\Repositorios\\AquaEnergyMonitor\\AquaEnergyMonitor\\AquaEnergyMonitor\\Properties\\launchSettings.json",
-              "RelativeToolTip": "AquaEnergyMonitor\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAABhwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-14T22:18:44.256Z"
+              "Title": "Home.razor.css",
+              "DocumentMoniker": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Home.razor.css",
+              "RelativeDocumentMoniker": "AquaEnergyMonitor\\Components\\Pages\\Home.razor.css",
+              "ToolTip": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\Components\\Pages\\Home.razor.css",
+              "RelativeToolTip": "AquaEnergyMonitor\\Components\\Pages\\Home.razor.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-17T23:53:30.158Z",
+              "EditorCaption": ""
             }
           ]
         }
