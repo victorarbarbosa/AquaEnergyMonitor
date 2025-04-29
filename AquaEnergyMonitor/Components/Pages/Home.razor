@@ -1,13 +1,14 @@
 ﻿@page "/home"
 @using Radzen
-
-@inject TooltipService tooltipService
+@rendermode InteractiveServer
 
 <header class="site-header">
     <h3 class="header-title" style="display:inline;">AquaEnergyMonitor</h3>
-    <nav style="display:inline; float:right;">
-        <a href="/">Perfil</a>
-        <a href="/contato">Sair</a>
+    <nav>
+        <RadzenButton class="nav-button" Click=@(args => AbrirCadastroConsumo()) Text="Cadastrar Consumo" Icon="add_circle" ButtonStyle="ButtonStyle.Success" />
+        <RadzenButton class="nav-button" Click=@(args => AbrirCadastroConsumo()) Text="Visualizar Registros" ButtonStyle="ButtonStyle.Info" />
+        <RadzenButton class="nav-button" Click=@(args => AbrirCadastroConsumo()) Text="Perfil" ButtonStyle="ButtonStyle.Light" />
+        <RadzenButton class="nav-button" Click=@(args => AbrirCadastroConsumo()) Text="Sair" ButtonStyle="ButtonStyle.Danger" />
     </nav>
 </header>
 
@@ -25,7 +26,32 @@
         <RadzenColumnSeries Data="@consumos"
                             CategoryProperty="Mes"
                             ValueProperty="MetrosCubicos"
-                            Title="Consumo de Água">
+                            Title="Consumo de Água"
+                            Fill="#1e88e5">
+            <RadzenSeriesDataLabels Visible="true" />
+            <RadzenSeriesMeanLine Visible="true" Stroke="var(--rz-danger-dark)" LineType="LineType.Dashed" />
+        </RadzenColumnSeries>
+    </RadzenChart>
+</div>
+
+<div class="energia-container">
+    <h3 style="text-align:center;">Consumo de Energia por Mês</h3>
+
+    <RadzenChart Style="width: 1000px; height: 300px; margin: 0 auto;">
+        <RadzenCategoryAxis>
+            <RadzenAxisTitle Text="Mês" />
+        </RadzenCategoryAxis>
+        <RadzenValueAxis>
+            <RadzenAxisTitle Text="Consumo (kWh)" />
+        </RadzenValueAxis>
+
+        <RadzenColumnSeries Data="@consumosEnergia"
+                            CategoryProperty="Mes"
+                            ValueProperty="Kwh"
+                            Title="Consumo de Energia"
+                            Fill="#fbc02d">
+            <RadzenSeriesDataLabels Visible="true" />
+            <RadzenSeriesMeanLine Visible="true" Stroke="var(--rz-danger-dark)" LineType="LineType.Dashed" />
         </RadzenColumnSeries>
     </RadzenChart>
 </div>
@@ -35,6 +61,12 @@
     {
         public string Mes { get; set; }
         public double MetrosCubicos { get; set; }
+    }
+
+    public class ConsumoEnergia
+    {
+        public string Mes { get; set; }
+        public double Kwh { get; set; }
     }
 
     private List<Consumo> consumos = new()
@@ -53,9 +85,33 @@
         new Consumo { Mes = "Dez", MetrosCubicos = 15.1 },
     };
 
-    protected override void OnInitialized()
+    private List<ConsumoEnergia> consumosEnergia = new()
     {
-        base.OnInitialized();
-        StateHasChanged(); // Força a atualização
+        new ConsumoEnergia { Mes = "Jan", Kwh = 220 },
+        new ConsumoEnergia { Mes = "Fev", Kwh = 210 },
+        new ConsumoEnergia { Mes = "Mar", Kwh = 250 },
+        new ConsumoEnergia { Mes = "Abr", Kwh = 240 },
+        new ConsumoEnergia { Mes = "Mai", Kwh = 230 },
+        new ConsumoEnergia { Mes = "Jun", Kwh = 260 },
+        new ConsumoEnergia { Mes = "Jul", Kwh = 270 },
+        new ConsumoEnergia { Mes = "Ago", Kwh = 265 },
+        new ConsumoEnergia { Mes = "Set", Kwh = 250 },
+        new ConsumoEnergia { Mes = "Out", Kwh = 240 },
+        new ConsumoEnergia { Mes = "Nov", Kwh = 230 },
+        new ConsumoEnergia { Mes = "Dez", Kwh = 245 },
+    };
+
+    private void AbrirCadastroConsumo()
+    {
+        // Lógica para abrir a tela de cadastro de consumo
+        // Isso pode ser feito navegando para outra página ou exibindo um modal
+        Console.WriteLine("Abrir Cadastro de Consumo");
+    }
+
+    private void VisualizarRegistros()
+    {
+        // Lógica para visualizar os registros de consumo
+        // Isso pode ser feito navegando para outra página ou exibindo um modal
+        Console.WriteLine("Visualizar Registros");
     }
 }

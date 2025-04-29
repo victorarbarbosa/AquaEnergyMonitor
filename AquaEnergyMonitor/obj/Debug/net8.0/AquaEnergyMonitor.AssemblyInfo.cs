@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AquaEnergyMonitor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5935609090a72a55ee4ecc6f17a454d11be0e7ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5977bc8e28f837d702693f5b80458f2edf57a160")]
 [assembly: System.Reflection.AssemblyProductAttribute("AquaEnergyMonitor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AquaEnergyMonitor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,11 +3,8 @@ using AquaEnergyMonitor.Persistence;
 using AquaEnergyMonitor.Services;
 using Microsoft.EntityFrameworkCore;
 using Radzen;
-using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddScoped<TooltipService>();
 
 // Program.cs (Blazor Server)
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -19,8 +16,7 @@ builder.Services.AddScoped<AuthService>();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddScoped<Radzen.ThemeService>();
-builder.Services.AddScoped<Radzen.TooltipService>();
+builder.Services.AddRadzenComponents();
 
 var app = builder.Build();
 

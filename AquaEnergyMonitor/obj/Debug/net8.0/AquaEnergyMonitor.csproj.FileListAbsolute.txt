@@ -98,18 +98,6 @@ C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEner
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\AquaEnergyMonitor.runtimeconfig.json
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\AquaEnergyMonitor.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\AquaEnergyMonitor.pdb
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Blazorise.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Blazorise.Bootstrap.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Blazorise.Charts.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Blazorise.Icons.FontAwesome.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Blazorise.Licensing.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\ChartJs.Blazor.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Lambda2Js.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
@@ -122,8 +110,6 @@ C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEner
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Microsoft.JSInterop.dll
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Radzen.Blazor.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll

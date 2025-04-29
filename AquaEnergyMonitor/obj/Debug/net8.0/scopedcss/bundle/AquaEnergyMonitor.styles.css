@@ -259,10 +259,23 @@ main[b-zyyam2wft5] {
     color:aqua;
 }
 
+nav[b-8wgba5kmuj] {
+    display: inline;
+    float: right;
+}
+
 .aqua-container[b-8wgba5kmuj] {
     width: 70%;
     background-color:aliceblue;
     margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.energia-container[b-8wgba5kmuj] {
+    width: 70%;
+    background-color: #fffde7;
+    margin: 20px auto;
     border-radius: 5px;
     padding: 10px;
 }
