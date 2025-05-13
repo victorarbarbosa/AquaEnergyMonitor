@@ -6,7 +6,8 @@ namespace AquaEnergyMonitor.Models
 {
     public class Usuario
     {
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Nome é obrigatório")]
         public string Nome { get; set; } = string.Empty;
@@ -46,5 +47,8 @@ namespace AquaEnergyMonitor.Models
         [Required(ErrorMessage = "Quantidade de pessoas é obrigatório")]
         [Range(1, 100, ErrorMessage = "Informe um valor maior que zero")]
         public int QuantPessoas { get; set; } = 1;
+
+        public ICollection<ConsumoAgua> ConsumoAgua { get; set; }
+        public ICollection<ConsumoEnergia> consumoEnergia { get; set; }
     }
 }

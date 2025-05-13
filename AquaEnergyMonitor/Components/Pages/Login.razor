@@ -5,6 +5,7 @@
 @using AquaEnergyMonitor.Services
 
 @inject AuthService Service
+@inject SessionService SessionService
 @inject NavigationManager NavManager
 
 <div class="page-background">
@@ -39,8 +40,8 @@
 
     private async Task Logar()
     {
-        var sucesso = await Service.Login(LoginModel.Email, LoginModel.Senha);
-        if (sucesso)
+        var success = await Service.Login(LoginModel.Email, LoginModel.Senha);
+        if (success)
         {
             NavManager.NavigateTo("/home");
         }

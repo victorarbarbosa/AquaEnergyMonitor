@@ -1,6 +1,7 @@
 using AquaEnergyMonitor.Components;
 using AquaEnergyMonitor.Persistence;
 using AquaEnergyMonitor.Services;
+using Blazored.LocalStorage;
 using Microsoft.EntityFrameworkCore;
 using Radzen;
 
@@ -10,7 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=users.db"));
 
+builder.Services.AddBlazoredLocalStorage();
+
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<SessionService>();
+builder.Services.AddScoped<ConsumoService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -29,6 +34,8 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
 
 app.UseStaticFiles();
 app.UseAntiforgery();

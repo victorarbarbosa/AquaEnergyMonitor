@@ -3,6 +3,7 @@ using System;
 using AquaEnergyMonitor.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AquaEnergyMonitor.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250511222918_ThirdMigration")]
+    partial class ThirdMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.4");
@@ -20,7 +23,6 @@ namespace AquaEnergyMonitor.Migrations
             modelBuilder.Entity("AquaEnergyMonitor.Models.ConsumoAgua", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<double>("ConsumoMetrosCubicos")
@@ -29,12 +31,7 @@ namespace AquaEnergyMonitor.Migrations
                     b.Property<DateTime>("Data")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("UsuarioId")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("ConsumoAgua");
                 });
@@ -42,21 +39,15 @@ namespace AquaEnergyMonitor.Migrations
             modelBuilder.Entity("AquaEnergyMonitor.Models.ConsumoEnergia", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("ConsumoKiloWatts")
-                        .HasColumnType("REAL");
+                    b.Property<decimal>("ConsumoKiloWatts")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("Data")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("UsuarioId")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("ConsumoEnergia");
                 });
@@ -115,7 +106,7 @@ namespace AquaEnergyMonitor.Migrations
                 {
                     b.HasOne("AquaEnergyMonitor.Models.Usuario", "Usuario")
                         .WithMany("ConsumoAgua")
-                        .HasForeignKey("UsuarioId")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -126,7 +117,7 @@ namespace AquaEnergyMonitor.Migrations
                 {
                     b.HasOne("AquaEnergyMonitor.Models.Usuario", "Usuario")
                         .WithMany("consumoEnergia")
-                        .HasForeignKey("UsuarioId")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

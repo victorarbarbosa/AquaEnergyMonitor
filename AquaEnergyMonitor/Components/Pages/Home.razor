@@ -1,14 +1,20 @@
 ﻿@page "/home"
-@using Radzen
 @rendermode InteractiveServer
 
+@using System.ComponentModel.DataAnnotations
+@using AquaEnergyMonitor.Services
+
+@inject ConsumoService ConsumoService
+@inject NavigationManager NavManager
+
 <header class="site-header">
-    <h3 class="header-title" style="display:inline;">AquaEnergyMonitor</h3>
+    <h2 class="header-title" style="display:inline;">AquaEnergyMonitor</h2>
     <nav>
-        <RadzenButton class="nav-button" Click=@(args => AbrirCadastroConsumo()) Text="Cadastrar Consumo" Icon="add_circle" ButtonStyle="ButtonStyle.Success" />
-        <RadzenButton class="nav-button" Click=@(args => AbrirCadastroConsumo()) Text="Visualizar Registros" ButtonStyle="ButtonStyle.Info" />
-        <RadzenButton class="nav-button" Click=@(args => AbrirCadastroConsumo()) Text="Perfil" ButtonStyle="ButtonStyle.Light" />
-        <RadzenButton class="nav-button" Click=@(args => AbrirCadastroConsumo()) Text="Sair" ButtonStyle="ButtonStyle.Danger" />
+        <RadzenButton Click=@(args => CadastrarConsumoAgua()) Icon="add_circle" Text="Consumo Agua" ButtonStyle="ButtonStyle.Info" />
+        <RadzenButton Click=@(args => CadastrarConsumoEnergia()) Icon="add_circle" Text="Consumo Energia" ButtonStyle="ButtonStyle.Warning" />
+        <RadzenButton Click=@(args => NavManager.NavigateTo("/consumos")) Text="Visualizar Consumo" ButtonStyle="ButtonStyle.Base" />
+        <RadzenButton Click=@(args => CadastrarConsumoAgua()) Text="Perfil" ButtonStyle="ButtonStyle.Base" />
+        <RadzenButton Click=@(args => CadastrarConsumoAgua()) Text="Sair" ButtonStyle="ButtonStyle.Danger" />
     </nav>
 </header>
 
@@ -16,18 +22,18 @@
     <h3 style="text-align:center;">Consumo de Água por Mês</h3>
 
     <RadzenChart Style="width: 1000px; height: 300px; margin: 0 auto;">
-        <RadzenCategoryAxis>
+        <RadzenCategoryAxis LabelRotation="-45">
             <RadzenAxisTitle Text="Mês" />
         </RadzenCategoryAxis>
-        <RadzenValueAxis>
+        <RadzenValueAxis Min="0" Max="@GetMaxAxisAgua()" Step="20">
             <RadzenAxisTitle Text="Consumo (m³)" />
         </RadzenValueAxis>
 
-        <RadzenColumnSeries Data="@consumos"
-                            CategoryProperty="Mes"
-                            ValueProperty="MetrosCubicos"
-                            Title="Consumo de Água"
-                            Fill="#1e88e5">
+        <RadzenColumnSeries Data="@ConsumoService.GetConsumoAgua()"
+        CategoryProperty="Mes"
+        ValueProperty="ConsumoTotal"
+        Title="Consumo de Água"
+        Fill="#1e88e5">
             <RadzenSeriesDataLabels Visible="true" />
             <RadzenSeriesMeanLine Visible="true" Stroke="var(--rz-danger-dark)" LineType="LineType.Dashed" />
         </RadzenColumnSeries>
@@ -38,80 +44,195 @@
     <h3 style="text-align:center;">Consumo de Energia por Mês</h3>
 
     <RadzenChart Style="width: 1000px; height: 300px; margin: 0 auto;">
-        <RadzenCategoryAxis>
+        <RadzenCategoryAxis LabelRotation="-45">
             <RadzenAxisTitle Text="Mês" />
         </RadzenCategoryAxis>
-        <RadzenValueAxis>
+        <RadzenValueAxis Min="0" Max="@GetMaxAxisEnergia()" Step="20">
             <RadzenAxisTitle Text="Consumo (kWh)" />
         </RadzenValueAxis>
 
-        <RadzenColumnSeries Data="@consumosEnergia"
-                            CategoryProperty="Mes"
-                            ValueProperty="Kwh"
-                            Title="Consumo de Energia"
-                            Fill="#fbc02d">
+        <RadzenColumnSeries Data="@ConsumoService.GetConsumoEnergia()"
+        CategoryProperty="Mes"
+        ValueProperty="ConsumoTotal"
+        Title="Consumo de Energia"
+        Fill="#fbc02d">
             <RadzenSeriesDataLabels Visible="true" />
             <RadzenSeriesMeanLine Visible="true" Stroke="var(--rz-danger-dark)" LineType="LineType.Dashed" />
         </RadzenColumnSeries>
     </RadzenChart>
 </div>
 
-@code {
-    public class Consumo
-    {
-        public string Mes { get; set; }
-        public double MetrosCubicos { get; set; }
-    }
+@if (mostrarModalCadastroAgua)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <h3>Cadastro de Consumo de Água</h3>
 
-    public class ConsumoEnergia
+            <EditForm Model="@novoConsumoAgua" OnValidSubmit="SalvarConsumoAgua">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div>
+                    <label>Data do Consumo:</label>
+                    <InputDate @bind-Value="novoConsumoAgua.Data" class="form-control" />
+                </div>
+
+                <div>
+                    <label>Consumo de Água (m³):</label>
+                    <InputNumber @bind-Value="novoConsumoAgua.MetrosCubicos" class="form-control" />
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-secondary" @onclick="FecharModal">Cancelar</button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@if (mostrarModalCadastroEnergia)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <h3>Cadastro de Consumo de Energia</h3>
+
+            <EditForm Model="@novoConsumoEnergia" OnValidSubmit="SalvarConsumoEnergia">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div>
+                    <label>Data do Consumo:</label>
+                    <InputDate @bind-Value="novoConsumoEnergia.Data" class="form-control" />
+                </div>
+
+                <div>
+                    <label>Consumo de Energia (Kw/H):</label>
+                    <InputNumber @bind-Value="novoConsumoEnergia.Kwh" class="form-control" />
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-secondary" @onclick="FecharModal">Cancelar</button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@if (alertaSucessoCadastro)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <h3>Consumo cadastrado com sucesso!</h3>
+
+            <div style="margin-top: 10px;">
+                <button type="button" class="btn btn-secondary" @onclick="FecharAlerta">Entendi</button>
+            </div>
+        </div>
+    </div>
+}
+
+@if (alertaErroCadastro)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <h3>Houve um erro no cadastro</h3>
+
+            <div style="margin-top: 10px;">
+                <button type="button" class="btn btn-secondary" @onclick="FecharAlerta">Entendi</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    public class ConsumoEnergiaDto
     {
-        public string Mes { get; set; }
+        [Required]
+        public DateTime Data { get; set; }
+        [Required]
         public double Kwh { get; set; }
     }
 
-    private List<Consumo> consumos = new()
+    public class ConsumoAguaDto
     {
-        new Consumo { Mes = "Jan", MetrosCubicos = 12.5 },
-        new Consumo { Mes = "Fev", MetrosCubicos = 10.3 },
-        new Consumo { Mes = "Mar", MetrosCubicos = 14.7 },
-        new Consumo { Mes = "Abr", MetrosCubicos = 13.2 },
-        new Consumo { Mes = "Mai", MetrosCubicos = 11.8 },
-        new Consumo { Mes = "Jun", MetrosCubicos = 15.1 },
-        new Consumo { Mes = "Jul", MetrosCubicos = 15.1 },
-        new Consumo { Mes = "Ago", MetrosCubicos = 15.1 },
-        new Consumo { Mes = "Set", MetrosCubicos = 15.1 },
-        new Consumo { Mes = "Out", MetrosCubicos = 15.1 },
-        new Consumo { Mes = "Nov", MetrosCubicos = 15.1 },
-        new Consumo { Mes = "Dez", MetrosCubicos = 15.1 },
-    };
-
-    private List<ConsumoEnergia> consumosEnergia = new()
-    {
-        new ConsumoEnergia { Mes = "Jan", Kwh = 220 },
-        new ConsumoEnergia { Mes = "Fev", Kwh = 210 },
-        new ConsumoEnergia { Mes = "Mar", Kwh = 250 },
-        new ConsumoEnergia { Mes = "Abr", Kwh = 240 },
-        new ConsumoEnergia { Mes = "Mai", Kwh = 230 },
-        new ConsumoEnergia { Mes = "Jun", Kwh = 260 },
-        new ConsumoEnergia { Mes = "Jul", Kwh = 270 },
-        new ConsumoEnergia { Mes = "Ago", Kwh = 265 },
-        new ConsumoEnergia { Mes = "Set", Kwh = 250 },
-        new ConsumoEnergia { Mes = "Out", Kwh = 240 },
-        new ConsumoEnergia { Mes = "Nov", Kwh = 230 },
-        new ConsumoEnergia { Mes = "Dez", Kwh = 245 },
-    };
-
-    private void AbrirCadastroConsumo()
-    {
-        // Lógica para abrir a tela de cadastro de consumo
-        // Isso pode ser feito navegando para outra página ou exibindo um modal
-        Console.WriteLine("Abrir Cadastro de Consumo");
+        [Required]
+        public DateTime Data { get; set; }
+        [Required]
+        public double MetrosCubicos { get; set; }
     }
 
-    private void VisualizarRegistros()
+    private bool mostrarModalCadastroAgua = false;
+    private bool mostrarModalCadastroEnergia = false;
+    private bool alertaSucessoCadastro = false;
+    private bool alertaErroCadastro = false;
+
+    private ConsumoAguaDto novoConsumoAgua = new();
+    private ConsumoEnergiaDto novoConsumoEnergia = new();
+
+    private void CadastrarConsumoAgua()
     {
-        // Lógica para visualizar os registros de consumo
-        // Isso pode ser feito navegando para outra página ou exibindo um modal
-        Console.WriteLine("Visualizar Registros");
+        novoConsumoAgua = new();
+        mostrarModalCadastroAgua = true;
+    }
+
+    private void CadastrarConsumoEnergia()
+    {
+        novoConsumoEnergia = new();
+        mostrarModalCadastroEnergia = true;
+    }
+
+    private void FecharModal()
+    {
+        mostrarModalCadastroAgua = false;
+        mostrarModalCadastroEnergia = false;
+    }
+
+    private void FecharAlerta()
+    {
+        alertaSucessoCadastro = false;
+        alertaErroCadastro = false;
+    }
+
+    private async Task SalvarConsumoAgua()
+    {
+        var sucess = await ConsumoService.CadastraConsumoAgua(novoConsumoAgua);
+
+        FecharModal();
+
+        if (sucess)
+        {
+            alertaSucessoCadastro = true;
+        } else
+        {
+            alertaErroCadastro = true;
+        }
+    }
+
+    private async Task SalvarConsumoEnergia()
+    {
+        var sucess = await ConsumoService.CadastraConsumoEnergia(novoConsumoEnergia);
+
+        FecharModal();
+
+        if (sucess)
+        {
+            alertaSucessoCadastro = true;
+        }
+        else
+        {
+            alertaErroCadastro = true;
+        }
+    }
+
+    private double GetMaxAxisAgua()
+    {
+        return ConsumoService.GetConsumoAgua().Max(c => c.ConsumoTotal) + 20;
+    }
+
+    private double GetMaxAxisEnergia()
+    {
+        return ConsumoService.GetConsumoEnergia().Max(c => c.ConsumoTotal) + 20;
     }
 }

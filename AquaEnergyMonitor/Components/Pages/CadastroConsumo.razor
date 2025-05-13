@@ -1,0 +1,50 @@
+﻿@using System.ComponentModel.DataAnnotations
+@inject DialogService DialogService
+
+<EditForm Model="@modelo" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Mês</label>
+        <InputText class="form-control" @bind-Value="modelo.Mes" />
+    </div>
+
+    <div class="mb-3">
+        <label>Consumo de Água (m³)</label>
+        <InputNumber class="form-control" @bind-Value="modelo.MetrosCubicos" />
+    </div>
+
+    <div class="mb-3">
+        <label>Consumo de Energia (kWh)</label>
+        <InputNumber class="form-control" @bind-Value="modelo.Kwh" />
+    </div>
+
+    <RadzenButton Text="Salvar" ButtonType="ButtonType.Submit" Style="margin-right: 10px;" />
+    <RadzenButton Text="Cancelar" Click="()=> DialogService.Close(null)" ButtonStyle="ButtonStyle.Secondary" />
+</EditForm>
+
+@code {
+    [Parameter] public EventCallback<ConsumoCompleto> OnSubmit { get; set; }
+
+    private ConsumoCompleto modelo = new();
+
+    private void HandleValidSubmit()
+    {
+        DialogService.Close(modelo);
+    }
+
+    public class ConsumoCompleto
+    {
+        [Required]
+        public string Mes { get; set; }
+
+        [Required]
+        [Range(0, 999)]
+        public double MetrosCubicos { get; set; }
+
+        [Required]
+        [Range(0, 9999)]
+        public double Kwh { get; set; }
+    }
+}

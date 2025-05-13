@@ -249,10 +249,11 @@ main[b-zyyam2wft5] {
 /* _content/AquaEnergyMonitor/Components/Pages/Home.razor.rz.scp.css */
 .site-header[b-8wgba5kmuj] {
     background-color: white;
-    height: 8vh;
+    height: 10vh;
     border-bottom: 1px solid #A7A7A7;
     padding: 2.7vh 5% 0px 5%;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .header-title[b-8wgba5kmuj] {
@@ -278,6 +279,59 @@ nav[b-8wgba5kmuj] {
     margin: 20px auto;
     border-radius: 5px;
     padding: 10px;
+}
+
+.modal-overlay[b-8wgba5kmuj] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal-content[b-8wgba5kmuj] {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 10001;
+}
+
+    .modal-content h3[b-8wgba5kmuj] {
+        margin-top: 0;
+    }
+
+.form-control[b-8wgba5kmuj] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* _content/AquaEnergyMonitor/Components/Pages/ListagemConsumo.razor.rz.scp.css */
+.site-header[b-ppn34imi98] {
+    background-color: white;
+    height: 10vh;
+    border-bottom: 1px solid #A7A7A7;
+    padding: 2.7vh 5% 0px 5%;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.header-title[b-ppn34imi98] {
+    color: aqua;
+}
+
+nav[b-ppn34imi98] {
+    display: inline;
+    float: right;
 }
 /* _content/AquaEnergyMonitor/Components/Pages/Login.razor.rz.scp.css */
 .page-background[b-fjj905fwh8] {
