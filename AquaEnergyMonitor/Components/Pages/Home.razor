@@ -29,7 +29,7 @@
             <RadzenAxisTitle Text="Consumo (m³)" />
         </RadzenValueAxis>
 
-        <RadzenColumnSeries Data="@ConsumoService.GetConsumoAgua()"
+        <RadzenColumnSeries Data="@ConsumoService.GetConsumoAguaPresentation()"
         CategoryProperty="Mes"
         ValueProperty="ConsumoTotal"
         Title="Consumo de Água"
@@ -51,7 +51,7 @@
             <RadzenAxisTitle Text="Consumo (kWh)" />
         </RadzenValueAxis>
 
-        <RadzenColumnSeries Data="@ConsumoService.GetConsumoEnergia()"
+        <RadzenColumnSeries Data="@ConsumoService.GetConsumoEnergiaPresentation()"
         CategoryProperty="Mes"
         ValueProperty="ConsumoTotal"
         Title="Consumo de Energia"
@@ -63,35 +63,6 @@
 </div>
 
 @if (mostrarModalCadastroAgua)
-{
-    <div class="modal-overlay">
-        <div class="modal-content">
-            <h3>Cadastro de Consumo de Água</h3>
-
-            <EditForm Model="@novoConsumoAgua" OnValidSubmit="SalvarConsumoAgua">
-                <DataAnnotationsValidator />
-                <ValidationSummary />
-
-                <div>
-                    <label>Data do Consumo:</label>
-                    <InputDate @bind-Value="novoConsumoAgua.Data" class="form-control" />
-                </div>
-
-                <div>
-                    <label>Consumo de Água (m³):</label>
-                    <InputNumber @bind-Value="novoConsumoAgua.MetrosCubicos" class="form-control" />
-                </div>
-
-                <div style="margin-top: 10px;">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
-                    <button type="button" class="btn btn-secondary" @onclick="FecharModal">Cancelar</button>
-                </div>
-            </EditForm>
-        </div>
-    </div>
-}
-
-@if (mostrarModalCadastroEnergia)
 {
     <div class="modal-overlay">
         <div class="modal-content">
@@ -149,18 +120,34 @@
 @code {
     public class ConsumoEnergiaDto
     {
+        public Guid Id { get; set; }
         [Required]
         public DateTime Data { get; set; }
         [Required]
         public double Kwh { get; set; }
+        public string FormatedDate
+        {
+            get
+            {
+                return Data.ToString("dd/MM/yyyy");
+            }
+        }
     }
 
     public class ConsumoAguaDto
     {
+        public Guid Id { get; set; }
         [Required]
         public DateTime Data { get; set; }
         [Required]
         public double MetrosCubicos { get; set; }
+        public string FormatedDate
+        {
+            get
+            {
+                return Data.ToString("dd/MM/yyyy");
+            }
+        }
     }
 
     private bool mostrarModalCadastroAgua = false;
@@ -228,11 +215,11 @@
 
     private double GetMaxAxisAgua()
     {
-        return ConsumoService.GetConsumoAgua().Max(c => c.ConsumoTotal) + 20;
+        return ConsumoService.GetConsumoAguaPresentation().Max(c => c.ConsumoTotal) + 20;
     }
 
     private double GetMaxAxisEnergia()
     {
-        return ConsumoService.GetConsumoEnergia().Max(c => c.ConsumoTotal) + 20;
+        return ConsumoService.GetConsumoEnergiaPresentation().Max(c => c.ConsumoTotal) + 20;
     }
 }

@@ -15,7 +15,19 @@ namespace AquaEnergyMonitor.Services
             _sessionService = sessionService;
         }
 
-        public List<ConsumoAguaPresentation> GetConsumoAgua()
+        public List<ConsumoAguaDto> GetConsumoAgua()
+        {
+            return _context.ConsumoAgua.Select(c => new ConsumoAguaDto { Id = c.Id, Data = c.Data, MetrosCubicos = c.ConsumoMetrosCubicos })
+                .ToList();
+        }
+
+        public List<ConsumoEnergiaDto> GetConsumoEnergia()
+        {
+            return _context.ConsumoEnergia.Select(c => new ConsumoEnergiaDto { Id = c.Id, Data = c.Data, Kwh = c.ConsumoKiloWatts })
+                .ToList();
+        }
+
+        public List<ConsumoAguaPresentation> GetConsumoAguaPresentation()
         {
             return _context.ConsumoAgua.Where(c => c.Data >= DateTime.Today.AddYears(-1)).OrderByDescending(c => c.Data)
                 .GroupBy(c => new { c.Id, c.Data.Year, c.Data.Month })
@@ -50,7 +62,7 @@ namespace AquaEnergyMonitor.Services
             return true;
         }
 
-        public List<ConsumoEnergiaPresentation> GetConsumoEnergia()
+        public List<ConsumoEnergiaPresentation> GetConsumoEnergiaPresentation()
         {
             return _context.ConsumoEnergia.Where(c => c.Data >= DateTime.Today.AddYears(-1)).OrderByDescending(c => c.Data)
                 .GroupBy(c => new { c.Id, c.Data.Year, c.Data.Month })
@@ -89,12 +101,14 @@ namespace AquaEnergyMonitor.Services
         {
             var consumo = _context.ConsumoAgua.FirstOrDefault(c => c.Id.Equals(consumoId));
             _context.ConsumoAgua.Remove(consumo);
+            _context.SaveChanges();
         }
 
         public void ExcluiConsumoEnergia(Guid consumoId)
         {
             var consumo = _context.ConsumoEnergia.FirstOrDefault(c => c.Id.Equals(consumoId));
             _context.ConsumoEnergia.Remove(consumo);
+            _context.SaveChanges();
         }
     }
 

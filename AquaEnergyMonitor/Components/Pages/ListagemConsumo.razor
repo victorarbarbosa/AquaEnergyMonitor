@@ -1,6 +1,8 @@
 ﻿@page "/consumos"
+@rendermode InteractiveServer
 
 @using AquaEnergyMonitor.Services
+@using static AquaEnergyMonitor.Components.Pages.Home
 
 @inject ConsumoService ConsumoService
 @inject NavigationManager Navigation
@@ -17,15 +19,15 @@
 <div class="container-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 20px;">
 
     <RadzenCard Style="width: 45%; min-width: 300px;">
-        <h3 style="text-align:center;">Consumo de Água (últimos 12 meses)</h3>
-        <RadzenDataGrid Data="@consumosAgua" TItem="ConsumoAguaPresentation" ShowPagingSummary="true" PageSize="8" AllowPaging="true">
+        <h3 style="text-align:center;">Consumo de Água</h3>
+        <RadzenDataGrid @ref="aguaGrid" Data="@consumosAgua" TItem="ConsumoAguaDto" ShowPagingSummary="true" PageSize="8" AllowPaging="true" EditMode="@editMode">
             <Columns>
-                <RadzenDataGridColumn TItem="ConsumoAguaPresentation" Property="Mes" Title="Mês" />
-                <RadzenDataGridColumn TItem="ConsumoAguaPresentation" Property="ConsumoTotal" Title="Consumo (m³)" />
-                <RadzenDataGridColumn TItem="ConsumoAguaPresentation" Title="Ações">
+                <RadzenDataGridColumn TItem="ConsumoAguaDto" Property="Data" Title="Data" />
+                <RadzenDataGridColumn TItem="ConsumoAguaDto" Property="MetrosCubicos" Title="Consumo (m³)" />
+                <RadzenDataGridColumn TItem="ConsumoAguaDto" Title="Ações">
                     <Template Context="item">
                         <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" />
-                        <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Style="margin-left: 5px;" Click="@(args => ConsumoService.ExcluiConsumoAgua(item.Id))"/>
+                        <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Style="margin-left: 5px;" Click="@(args => ExcluiConsumoAgua(item.Id))"/>
                     </Template>
                 </RadzenDataGridColumn>
             </Columns>
@@ -33,15 +35,15 @@
     </RadzenCard>
 
     <RadzenCard Style="width: 45%; min-width: 300px;">
-        <h3 style="text-align:center;">Consumo de Energia (últimos 12 meses)</h3>
-        <RadzenDataGrid Data="@consumosEnergia" TItem="ConsumoEnergiaPresentation" ShowPagingSummary="true" PageSize="8" AllowPaging="true">
+        <h3 style="text-align:center;">Consumo de Energia</h3>
+        <RadzenDataGrid @ref="energiaGrid" Data="@consumosEnergia" TItem="ConsumoEnergiaDto" ShowPagingSummary="true" PageSize="8" AllowPaging="true" EditMode="@editMode">
             <Columns>
-                <RadzenDataGridColumn TItem="ConsumoEnergiaPresentation" Property="Mes" Title="Mês" />
-                <RadzenDataGridColumn TItem="ConsumoEnergiaPresentation" Property="ConsumoTotal" Title="Consumo (kWh)" />
-                <RadzenDataGridColumn TItem="ConsumoEnergiaPresentation" Title="Ações">
+                <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Property="Data" Title="Data" />
+                <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Property="Kwh" Title="Consumo (kWh)" />
+                <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Title="Ações">
                     <Template Context="item">
                         <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" />
-                        <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Style="margin-left: 5px;" Click="@(args => ConsumoService.ExcluiConsumoEnergia(item.Id))"/>
+                        <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Style="margin-left: 5px;" Click="@(args => ExcluiConsumoEnergia(item.Id))"/>
                     </Template>
                 </RadzenDataGridColumn>
             </Columns>
@@ -51,12 +53,31 @@
 </div>
 
 @code {
-    private List<ConsumoAguaPresentation> consumosAgua = new();
-    private List<ConsumoEnergiaPresentation> consumosEnergia = new();
+    RadzenDataGrid<ConsumoAguaDto> aguaGrid;
+    RadzenDataGrid<ConsumoEnergiaDto> energiaGrid;
+
+    DataGridEditMode editMode = DataGridEditMode.Single;
+
+    private List<ConsumoAguaDto> consumosAgua = new();
+    private List<ConsumoEnergiaDto> consumosEnergia = new();
 
     protected override void OnInitialized()
     {
         consumosAgua = ConsumoService.GetConsumoAgua();
         consumosEnergia = ConsumoService.GetConsumoEnergia();
+    }
+
+    public async Task ExcluiConsumoAgua(Guid id)
+    {
+        ConsumoService.ExcluiConsumoAgua(id);
+        consumosAgua = ConsumoService.GetConsumoAgua();
+        await aguaGrid.Reload();
+    }
+
+    public async Task ExcluiConsumoEnergia(Guid id)
+    {
+        ConsumoService.ExcluiConsumoEnergia(id);
+        consumosEnergia = ConsumoService.GetConsumoEnergia();
+        await energiaGrid.Reload();
     }
 }
