@@ -66,6 +66,35 @@
 {
     <div class="modal-overlay">
         <div class="modal-content">
+            <h3>Cadastro de Consumo de Água</h3>
+
+            <EditForm Model="@novoConsumoAgua" OnValidSubmit="SalvarConsumoAgua">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div>
+                    <label>Data do Consumo:</label>
+                    <InputDate @bind-Value="novoConsumoAgua.Data" class="form-control" />
+                </div>
+
+                <div>
+                    <label>Consumo de Água (m³):</label>
+                    <InputNumber @bind-Value="novoConsumoAgua.MetrosCubicos" class="form-control" />
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-secondary" @onclick="FecharModal">Cancelar</button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@if (mostrarModalCadastroEnergia)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
             <h3>Cadastro de Consumo de Energia</h3>
 
             <EditForm Model="@novoConsumoEnergia" OnValidSubmit="SalvarConsumoEnergia">

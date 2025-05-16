@@ -110,6 +110,29 @@ namespace AquaEnergyMonitor.Services
             _context.ConsumoEnergia.Remove(consumo);
             _context.SaveChanges();
         }
+
+        public void AtualizaConsumoAgua(ConsumoAguaDto dto)
+        {
+            var entity = _context.ConsumoAgua.FirstOrDefault(x => x.Id == dto.Id);
+            if (entity != null)
+            {
+                entity.Data = dto.Data;
+                entity.ConsumoMetrosCubicos = dto.MetrosCubicos;
+                _context.SaveChanges();
+            }
+        }
+
+        public void AtualizaConsumoEnergia(ConsumoEnergiaDto dto)
+        {
+            var entity = _context.ConsumoEnergia.FirstOrDefault(x => x.Id == dto.Id);
+            if (entity != null)
+            {
+                entity.Data = dto.Data;
+                entity.ConsumoKiloWatts = dto.Kwh;
+                _context.SaveChanges();
+            }
+        }
+
     }
 
     public class ConsumoAguaPresentation

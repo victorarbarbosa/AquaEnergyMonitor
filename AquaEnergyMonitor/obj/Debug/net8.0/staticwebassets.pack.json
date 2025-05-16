@@ -1,32 +1,28 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AquaEnergyMonitor.bundle.scp.css",
-      "PackagePath": "staticwebassets\\AquaEnergyMonitor.ip52jr4s88.bundle.scp.css"
+      "Id": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AquaEnergyMonitor.bundle.scp.css",
+      "PackagePath": "staticwebassets\\AquaEnergyMonitor.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\app.css",
+      "Id": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\victo\\OneDrive\\Documentos\\Repositorios\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\images\\hidreletrica.jpg",
+      "Id": "C:\\Users\\Victor\\Desktop\\Estudos e Projetos\\AquaEnergy\\AquaEnergyMonitor\\AquaEnergyMonitor\\wwwroot\\images\\hidreletrica.jpg",
       "PackagePath": "staticwebassets\\images\\hidreletrica.jpg"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AquaEnergyMonitor.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AquaEnergyMonitor.Microsoft.AspNetCore.StaticWebAssets.props",

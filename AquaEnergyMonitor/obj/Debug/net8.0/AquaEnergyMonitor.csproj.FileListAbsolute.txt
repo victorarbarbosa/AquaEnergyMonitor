@@ -422,3 +422,5 @@ C:\Users\victo\OneDrive\Documentos\Repositorios\AquaEnergy\AquaEnergyMonitor\Aqu
 C:\Users\victo\OneDrive\Documentos\Repositorios\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Blazored.LocalStorage.dll
 C:\Users\victo\OneDrive\Documentos\Repositorios\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\victo\OneDrive\Documentos\Repositorios\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Pages\ListagemConsumo.razor.rz.scp.css
+C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Pages\ListagemConsumo.razor.rz.scp.css
