@@ -1,0 +1,131 @@
+﻿@page "/perfil"
+@rendermode InteractiveServer
+
+@using AquaEnergyMonitor.Models
+@using AquaEnergyMonitor.Models.Enuns
+@using AquaEnergyMonitor.Services
+
+@inject NavigationManager Navigation
+@inject UsuarioService UsuarioService
+
+<header class="site-header">
+    <h2 class="header-title" style="display:inline;">AquaEnergyMonitor</h2>
+    <nav>
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" />
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/perfil"))" Text="Perfil" />
+        <RadzenButton Text="Sair" ButtonStyle="ButtonStyle.Danger" />
+    </nav>
+</header>
+
+<div class="container-fluid d-flex justify-content-center bg-light" style="height: 90vh;">
+    <div class="card shadow p-4 w-100" style="max-width: 900px; margin-top: 20px; height: 500px; ">
+        <h4 class="card-title text-center mb-4">Meu Perfil</h4>
+
+        <EditForm Model="usuario" OnValidSubmit="SalvarAlteracoes">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            @if (mostrarAlertaSucesso)
+            {
+                <div class="alert alert-success text-center" role="alert">
+                    Dados atualizados com sucesso!
+                </div>
+            }
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Nome</label>
+                    <InputText @bind-Value="usuario.Nome" class="form-control" />
+                    <ValidationMessage For="@(() => usuario.Nome)" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Sobrenome</label>
+                    <InputText @bind-Value="usuario.Sobrenome" class="form-control" />
+                    <ValidationMessage For="@(() => usuario.Sobrenome)" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Email</label>
+                    <InputText @bind-Value="usuario.Email" class="form-control" />
+                    <ValidationMessage For="@(() => usuario.Email)" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Endereço</label>
+                    <InputText @bind-Value="usuario.Endereco" class="form-control" />
+                    <ValidationMessage For="@(() => usuario.Endereco)" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Cidade</label>
+                    <InputText @bind-Value="usuario.Cidade" class="form-control" />
+                    <ValidationMessage For="@(() => usuario.Cidade)" />
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label>Estado (UF)</label>
+                    <InputText @bind-Value="usuario.Estado" class="form-control" maxlength="2" />
+                    <ValidationMessage For="@(() => usuario.Estado)" />
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label>CEP</label>
+                    <InputText @bind-Value="usuario.Cep" class="form-control" />
+                    <ValidationMessage For="@(() => usuario.Cep)" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label style="display:block;">Perfil</label>
+                    <InputRadioGroup @bind-Value="usuario.Perfil">
+                        @foreach (TipoPerfilEnum perfil in Enum.GetValues(typeof(TipoPerfilEnum)))
+                        {
+                            <div class="form-check form-check-inline">
+                                <InputRadio class="form-check-input" Value="perfil" />
+                                <label class="form-check-label">@perfil</label>
+                            </div>
+                        }
+                    </InputRadioGroup>
+                    <ValidationMessage For="@(() => usuario.Perfil)" />
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <label>Quantidade de Pessoas</label>
+                    <InputNumber @bind-Value="usuario.QuantPessoas" class="form-control" />
+                    <ValidationMessage For="@(() => usuario.QuantPessoas)" />
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Salvar</button>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private UsuarioDto usuario = new();
+    private bool jaCarregou = false;
+    private bool mostrarAlertaSucesso = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && !jaCarregou)
+        {
+            usuario = await UsuarioService.GetUsuarioAsync();
+            jaCarregou = true;
+            StateHasChanged();
+        }
+    }
+
+    private async Task SalvarAlteracoes()
+    {
+        usuario = UsuarioService.EditaUsuario(usuario);
+
+        mostrarAlertaSucesso = true;
+        StateHasChanged();
+
+        // Esconde alerta após 3 segundos
+        await Task.Delay(3000);
+        mostrarAlertaSucesso = false;
+        StateHasChanged();
+    }
+}

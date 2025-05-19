@@ -29,7 +29,7 @@ namespace AquaEnergyMonitor.Services
 
         public List<ConsumoAguaPresentation> GetConsumoAguaPresentation()
         {
-            return _context.ConsumoAgua.Where(c => c.Data >= DateTime.Today.AddYears(-1)).OrderByDescending(c => c.Data)
+            return _context.ConsumoAgua.Where(c => c.Data >= DateTime.Today.AddYears(-1))
                 .GroupBy(c => new { c.Id, c.Data.Year, c.Data.Month })
                 .Select(g => new ConsumoAguaPresentation
                 {
@@ -37,6 +37,7 @@ namespace AquaEnergyMonitor.Services
                     Mes = new DateTime(g.Key.Year, g.Key.Month, 1).ToString("MM/yyyy"),
                     ConsumoTotal = g.Sum(c => c.ConsumoMetrosCubicos)
                 })
+                .OrderByDescending(c => c.Mes)
                 .ToList();
         }
 
@@ -64,7 +65,7 @@ namespace AquaEnergyMonitor.Services
 
         public List<ConsumoEnergiaPresentation> GetConsumoEnergiaPresentation()
         {
-            return _context.ConsumoEnergia.Where(c => c.Data >= DateTime.Today.AddYears(-1)).OrderByDescending(c => c.Data)
+            return _context.ConsumoEnergia.Where(c => c.Data >= DateTime.Today.AddYears(-1))
                 .GroupBy(c => new { c.Id, c.Data.Year, c.Data.Month })
                 .Select(g => new ConsumoEnergiaPresentation
                 {
@@ -72,6 +73,7 @@ namespace AquaEnergyMonitor.Services
                     Mes = new DateTime(g.Key.Year, g.Key.Month, 1).ToString("MM/yyyy"),
                     ConsumoTotal = g.Sum(c => c.ConsumoKiloWatts)
                 })
+                .OrderByDescending(c => c.Mes)
                 .ToList();
         }
 

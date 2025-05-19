@@ -1,0 +1,16 @@
+﻿.site-header {
+    background-color: white;
+    height: 10vh;
+    border-bottom: 1px solid #A7A7A7;
+    padding: 2.7vh 5% 0px 5%;
+    align-items: center;
+}
+
+.header-title {
+    color: aqua;
+}
+
+nav {
+    display: inline;
+    float: right;
+}

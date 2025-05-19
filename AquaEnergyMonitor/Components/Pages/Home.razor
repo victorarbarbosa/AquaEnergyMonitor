@@ -13,7 +13,7 @@
         <RadzenButton Click=@(args => CadastrarConsumoAgua()) Icon="add_circle" Text="Consumo Agua" ButtonStyle="ButtonStyle.Info" />
         <RadzenButton Click=@(args => CadastrarConsumoEnergia()) Icon="add_circle" Text="Consumo Energia" ButtonStyle="ButtonStyle.Warning" />
         <RadzenButton Click=@(args => NavManager.NavigateTo("/consumos")) Text="Visualizar Consumo" ButtonStyle="ButtonStyle.Base" />
-        <RadzenButton Click=@(args => CadastrarConsumoAgua()) Text="Perfil" ButtonStyle="ButtonStyle.Base" />
+        <RadzenButton Click=@(args => NavManager.NavigateTo("/perfil")) Text="Perfil" ButtonStyle="ButtonStyle.Base" />
         <RadzenButton Click=@(args => CadastrarConsumoAgua()) Text="Sair" ButtonStyle="ButtonStyle.Danger" />
     </nav>
 </header>

@@ -16,6 +16,7 @@ builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<SessionService>();
 builder.Services.AddScoped<ConsumoService>();
+builder.Services.AddScoped<UsuarioService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

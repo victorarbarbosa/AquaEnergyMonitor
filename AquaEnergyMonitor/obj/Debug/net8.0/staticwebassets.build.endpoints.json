@@ -3,7 +3,7 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
-      "Route": "AquaEnergyMonitor.ip52jr4s88.styles.css",
+      "Route": "AquaEnergyMonitor.i8abldkjbp.styles.css",
       "AssetFile": "AquaEnergyMonitor.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -17,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10758"
+          "Value": "7407"
         },
         {
           "Name": "Content-Type",
@@ -25,21 +25,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Zgj7eKNSeC53Zgg0vhO0SRDe5wDj508qWA8tANqUTyk=\""
+          "Value": "\"kpEnKNxHhG5jrhccIhtPzt6F0cW29E/DwOqHg4Dae0E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 23:53:19 GMT"
+          "Value": "Fri, 16 May 2025 23:16:23 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ip52jr4s88"
+          "Value": "i8abldkjbp"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Zgj7eKNSeC53Zgg0vhO0SRDe5wDj508qWA8tANqUTyk="
+          "Value": "sha256-kpEnKNxHhG5jrhccIhtPzt6F0cW29E/DwOqHg4Dae0E="
         },
         {
           "Name": "label",
@@ -62,7 +62,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10758"
+          "Value": "7407"
         },
         {
           "Name": "Content-Type",
@@ -70,17 +70,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Zgj7eKNSeC53Zgg0vhO0SRDe5wDj508qWA8tANqUTyk=\""
+          "Value": "\"kpEnKNxHhG5jrhccIhtPzt6F0cW29E/DwOqHg4Dae0E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 23:53:19 GMT"
+          "Value": "Fri, 16 May 2025 23:16:23 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Zgj7eKNSeC53Zgg0vhO0SRDe5wDj508qWA8tANqUTyk="
+          "Value": "sha256-kpEnKNxHhG5jrhccIhtPzt6F0cW29E/DwOqHg4Dae0E="
         }
       ]
     },
