@@ -5,6 +5,7 @@
 @using AquaEnergyMonitor.Services
 
 @inject ConsumoService ConsumoService
+@inject SessionService SessionService
 @inject NavigationManager NavManager
 
 <header class="site-header">
@@ -14,7 +15,7 @@
         <RadzenButton Click=@(args => CadastrarConsumoEnergia()) Icon="add_circle" Text="Consumo Energia" ButtonStyle="ButtonStyle.Warning" />
         <RadzenButton Click=@(args => NavManager.NavigateTo("/consumos")) Text="Visualizar Consumo" ButtonStyle="ButtonStyle.Base" />
         <RadzenButton Click=@(args => NavManager.NavigateTo("/perfil")) Text="Perfil" ButtonStyle="ButtonStyle.Base" />
-        <RadzenButton Click=@(args => CadastrarConsumoAgua()) Text="Sair" ButtonStyle="ButtonStyle.Danger" />
+        <RadzenButton Click=@(args => RealizaSaida()) Text="Sair" ButtonStyle="ButtonStyle.Danger" />
     </nav>
 </header>
 
@@ -25,12 +26,12 @@
         <RadzenCategoryAxis LabelRotation="-45">
             <RadzenAxisTitle Text="Mês" />
         </RadzenCategoryAxis>
-        <RadzenValueAxis Min="0" Max="@GetMaxAxisAgua()" Step="20">
+        <RadzenValueAxis Min="0" Max="@GetMaxAxisAgua()">
             <RadzenAxisTitle Text="Consumo (m³)" />
         </RadzenValueAxis>
 
         <RadzenColumnSeries Data="@ConsumoService.GetConsumoAguaPresentation()"
-        CategoryProperty="Mes"
+        CategoryProperty="MesFormatado"
         ValueProperty="ConsumoTotal"
         Title="Consumo de Água"
         Fill="#1e88e5">
@@ -47,12 +48,12 @@
         <RadzenCategoryAxis LabelRotation="-45">
             <RadzenAxisTitle Text="Mês" />
         </RadzenCategoryAxis>
-        <RadzenValueAxis Min="0" Max="@GetMaxAxisEnergia()" Step="20">
+        <RadzenValueAxis Min="0" Max="@GetMaxAxisEnergia()">
             <RadzenAxisTitle Text="Consumo (kWh)" />
         </RadzenValueAxis>
 
         <RadzenColumnSeries Data="@ConsumoService.GetConsumoEnergiaPresentation()"
-        CategoryProperty="Mes"
+        CategoryProperty="MesFormatado"
         ValueProperty="ConsumoTotal"
         Title="Consumo de Energia"
         Fill="#fbc02d">
@@ -146,12 +147,51 @@
     </div>
 }
 
+<h1 style="text-align: center; margin-top: 50px;">Posts de Conscientização</h1>
+<div class="awareness-cards" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 40px auto; max-width: 1500px;">
+    <div class="card" @onclick=NavigateToAgua
+         style="cursor: pointer; background-color: #e3f2fd; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
+        <img src="images/agua.jpg" alt="Economize Água" style="width: 100%; height: 180px; object-fit: cover;" />
+        <div style="padding: 15px;">
+            <h4 style="color: #0d47a1;">💧 Economize Água</h4>
+            <p>Feche a torneira enquanto escova os dentes ou ensaboa a louça. Economize até 30 litros por dia!</p>
+        </div>
+    </div>
+
+    <div class="card" @onclick=NavigateToEnergia
+         style="cursor: pointer; background-color: #fffde7; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
+        <img src="images/energia.jpg" alt="Economize Energia" style="width: 100%; height: 180px; object-fit: cover;" />
+        <div style="padding: 15px;">
+            <h4 style="color: #f57f17;">⚡ Consumo Consciente</h4>
+            <p>Desligue aparelhos da tomada. O modo standby também consome energia!</p>
+        </div>
+    </div>
+
+    <div class="card" @onclick=NavigateToSustentavel
+         style="cursor: pointer; background-color: #f1f8e9; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
+        <img src="images/sustentabilidade.jpg" alt="Sustentabilidade" style="width: 100%; height: 180px; object-fit: cover;" />
+        <div style="padding: 15px;">
+            <h4 style="color: #33691e;">🌱 Pequenas Ações</h4>
+            <p>Lâmpadas LED, vazamentos reparados, banho mais curto. Ações simples, impacto real!</p>
+        </div>
+    </div>
+
+    <div class="card" @onclick=NavigateToDicas
+         style="cursor: pointer; background-color: #e0d3f5; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
+        <img src="images/dicas.jpg" alt="Sustentabilidade" style="width: 100%; height: 180px; object-fit: cover;" />
+        <div style="padding: 15px;">
+            <h4 style="color: #7b1fa2;">Dicas Práticas</h4>
+            <p>Adote hábitos simples que fazem grande diferença na economia de água e energia.</p>
+        </div>
+    </div>
+</div>
+
 @code {
     public class ConsumoEnergiaDto
     {
         public Guid Id { get; set; }
         [Required]
-        public DateTime Data { get; set; }
+        public DateTime Data { get; set; } = DateTime.Now;
         [Required]
         public double Kwh { get; set; }
         public string FormatedDate
@@ -167,7 +207,7 @@
     {
         public Guid Id { get; set; }
         [Required]
-        public DateTime Data { get; set; }
+        public DateTime Data { get; set; } = DateTime.Now;
         [Required]
         public double MetrosCubicos { get; set; }
         public string FormatedDate
@@ -250,5 +290,16 @@
     private double GetMaxAxisEnergia()
     {
         return ConsumoService.GetConsumoEnergiaPresentation().Max(c => c.ConsumoTotal) + 20;
+    }
+
+    private void NavigateToAgua() => NavManager.NavigateTo("/artigo/agua");
+    private void NavigateToEnergia() => NavManager.NavigateTo("/artigo/energia");
+    private void NavigateToSustentavel() => NavManager.NavigateTo("/artigo/sustentabilidade");
+    private void NavigateToDicas() => NavManager.NavigateTo("/artigo/dicas");
+
+    private void RealizaSaida()
+    {
+        SessionService.ClearUserId();
+        NavManager.NavigateTo("/");
     }
 }

@@ -7,13 +7,14 @@
 
 @inject NavigationManager Navigation
 @inject UsuarioService UsuarioService
+@inject SessionService SessionService
 
 <header class="site-header">
     <h2 class="header-title" style="display:inline;">AquaEnergyMonitor</h2>
     <nav>
-        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" />
-        <RadzenButton Click="@(args => Navigation.NavigateTo("/perfil"))" Text="Perfil" />
-        <RadzenButton Text="Sair" ButtonStyle="ButtonStyle.Danger" />
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/consumos"))" Text="Visualizar Consumos" ButtonStyle="ButtonStyle.Base" />
+        <RadzenButton Click="@(args => RealizaSaida())" Text="Sair" ButtonStyle="ButtonStyle.Danger" />
     </nav>
 </header>
 
@@ -127,5 +128,11 @@
         await Task.Delay(3000);
         mostrarAlertaSucesso = false;
         StateHasChanged();
+    }
+
+    private void RealizaSaida()
+    {
+        SessionService.ClearUserId();
+        Navigation.NavigateTo("/");
     }
 }

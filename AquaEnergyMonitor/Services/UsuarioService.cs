@@ -17,7 +17,7 @@ namespace AquaEnergyMonitor.Services
 
         public async Task<UsuarioDto?> GetUsuarioAsync()
         {
-            var userId = await _sessionService.GetUserId();
+            var userId = _sessionService.UserId;
 
             if (userId == null)
                 return null;

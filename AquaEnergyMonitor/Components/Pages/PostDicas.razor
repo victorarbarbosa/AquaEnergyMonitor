@@ -1,0 +1,130 @@
+﻿@page "/artigo/dicas"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<div class="artigo-wrapper">
+    <div class="artigo-content">
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+
+        <h1>💡 Dicas Práticas para um Consumo Consciente</h1>
+
+        <img src="images/dicas.jpg" alt="Dicas de Consumo" class="artigo-img" />
+
+        <p>
+            Pequenas ações diárias podem ter um impacto significativo na preservação de recursos e na redução de gastos. O consumo consciente começa com atenção, educação e escolhas inteligentes.
+        </p>
+
+        <h2>Água: Como economizar sem abrir mão do conforto</h2>
+        <ul>
+            <li>Feche a torneira ao escovar os dentes ou ensaboar a louça.</li>
+            <li>Reaproveite a água da chuva para regar plantas ou lavar áreas externas.</li>
+            <li>Use torneiras e chuveiros com arejadores ou redutores de vazão.</li>
+            <li>Conserte vazamentos imediatamente — uma torneira pingando pode desperdiçar até 40 litros por dia.</li>
+        </ul>
+
+        <h2>Energia: Consuma de forma eficiente</h2>
+        <ul>
+            <li>Prefira aparelhos com selo Procel de eficiência energética.</li>
+            <li>Desligue luzes e aparelhos quando não estiverem em uso.</li>
+            <li>Aproveite a luz natural e ventile os ambientes naturalmente sempre que possível.</li>
+            <li>Use o chuveiro elétrico no modo verão em dias quentes.</li>
+        </ul>
+
+        <h2>Consumo inteligente começa com você</h2>
+        <p>
+            Informar-se, refletir e agir. Estas são as bases do consumo consciente. Mudar seus hábitos hoje é garantir um amanhã mais sustentável, econômico e saudável.
+        </p>
+
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+    </div>
+</div>
+
+<style>
+    .artigo-wrapper {
+        padding: 40px 20px;
+        background-color: #f9f9f9;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .artigo-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .back-button {
+        background: none;
+        border: none;
+        color: #7b1fa2;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: color 0.3s;
+    }
+
+    .back-button:hover {
+            color: #7b1fa2;
+    }
+
+    h1 {
+        color: #7b1fa2;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        margin-top: 30px;
+        color: #333;
+        font-size: 1.5rem;
+        border-left: 4px solid #7b1fa2;
+        padding-left: 10px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+        margin-top: 15px;
+    }
+
+    ul {
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+
+    ul li {
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+        color: #555;
+    }
+
+    .artigo-img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 25px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .primary-button {
+        margin-top: 40px;
+        background-color: #7b1fa2;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .primary-button:hover {
+            background-color: #7b1fa2;
+    }
+</style>
+

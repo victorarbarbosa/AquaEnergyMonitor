@@ -1,0 +1,134 @@
+﻿@page "/artigo/sustentabilidade"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<div class="artigo-wrapper">
+    <div class="artigo-content">
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+
+        <h1>🌱 Sustentabilidade: Um Compromisso com o Futuro</h1>
+
+        <img src="images/sustentabilidade.jpg" alt="Sustentabilidade" class="artigo-img" />
+
+        <p>
+            Sustentabilidade é a capacidade de suprir as necessidades do presente sem comprometer as gerações futuras. Envolve ações conscientes para preservar o meio ambiente, promover o bem-estar social e manter o equilíbrio econômico.
+        </p>
+
+        <h2>Por que a sustentabilidade é essencial?</h2>
+        <p>
+            Com o aumento da poluição, escassez de recursos naturais e mudanças climáticas, torna-se urgente repensar nossos hábitos. A sustentabilidade nos convida a repensar o consumo, valorizar a natureza e construir um mundo mais justo.
+        </p>
+
+        <h2>Práticas sustentáveis no dia a dia</h2>
+        <ul>
+            <li>Separar o lixo reciclável do orgânico.</li>
+            <li>Reduzir o uso de plásticos descartáveis.</li>
+            <li>Dar preferência a produtos duráveis e reutilizáveis.</li>
+            <li>Evitar desperdícios de água e energia.</li>
+            <li>Consumir de produtores locais e com responsabilidade ambiental.</li>
+        </ul>
+
+        <h2>Benefícios da sustentabilidade</h2>
+        <ul>
+            <li>Preservação dos ecossistemas.</li>
+            <li>Economia de recursos e redução de custos.</li>
+            <li>Qualidade de vida para todos.</li>
+            <li>Maior equilíbrio entre sociedade, natureza e economia.</li>
+        </ul>
+
+        <p>
+            Pequenas atitudes geram grandes transformações. Cada escolha sustentável conta. Seja parte da mudança e contribua para um planeta mais saudável e equilibrado.
+        </p>
+
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+    </div>
+</div>
+
+<style>
+    .artigo-wrapper {
+        padding: 40px 20px;
+        background-color: #f9f9f9;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .artigo-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .back-button {
+        background: none;
+        border: none;
+        color: #007bff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: color 0.3s;
+    }
+
+    .back-button:hover {
+        color: #0056b3;
+    }
+
+    h1 {
+        color: #2e7d32;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        margin-top: 30px;
+        color: #333;
+        font-size: 1.5rem;
+        border-left: 4px solid #388e3c;
+        padding-left: 10px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+        margin-top: 15px;
+    }
+
+    ul {
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+
+    ul li {
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+        color: #555;
+    }
+
+    .artigo-img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 25px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .primary-button {
+        margin-top: 40px;
+        background-color: #388e3c;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .primary-button:hover {
+        background-color: #1b5e20;
+    }
+</style>

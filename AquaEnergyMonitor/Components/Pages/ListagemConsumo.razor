@@ -5,16 +5,77 @@
 @using static AquaEnergyMonitor.Components.Pages.Home
 
 @inject ConsumoService ConsumoService
+@inject SessionService SessionService
 @inject NavigationManager Navigation
 
 <header class="site-header">
     <h2 class="header-title" style="display:inline;">AquaEnergyMonitor</h2>
     <nav>
-        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" />
-        <RadzenButton Click="@(args => Navigation.NavigateTo("/perfil"))" Text="Perfil" />
-        <RadzenButton Text="Sair" ButtonStyle="ButtonStyle.Danger" />
+        <RadzenButton Click=@(args => CadastrarConsumoAgua()) Icon="add_circle" Text="Consumo Agua" ButtonStyle="ButtonStyle.Info" />
+        <RadzenButton Click=@(args => CadastrarConsumoEnergia()) Icon="add_circle" Text="Consumo Energia" ButtonStyle="ButtonStyle.Warning" />
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+        <RadzenButton Click=@(args => Navigation.NavigateTo("/perfil")) Text="Perfil" ButtonStyle="ButtonStyle.Base" />
+        <RadzenButton Click=@(args => RealizaSaida()) Text="Sair" ButtonStyle="ButtonStyle.Danger" />
     </nav>
 </header>
+
+<div class="container-grid" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; padding:20px;">
+    <!-- Consumo de Água -->
+    <RadzenCard Style="width:45%; min-width:300px;">
+        <h3 style="text-align:center;">Consumo de Água</h3>
+        <RadzenDataGrid @ref="aguaGrid" Data="@consumosAgua" TItem="ConsumoAguaDto" ShowPagingSummary="true" PageSize="8" AllowPaging="true" EditMode="@editMode">
+            <Columns>
+                <RadzenDataGridColumn TItem="ConsumoAguaDto" Property="FormatedDate" Title="Data" />
+                <RadzenDataGridColumn TItem="ConsumoAguaDto" Property="MetrosCubicos" Title="Consumo (m³)" />
+                <RadzenDataGridColumn TItem="ConsumoAguaDto" Title="Ações">
+                    <Template Context="item">
+                        <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" Click="@(() => EditarConsumoAgua(item))" />
+                        <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Style="margin-left:5px;" Click="@(() => ExcluiConsumoAgua(item.Id))" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+        </RadzenDataGrid>
+
+        @if (ConsumosAguaElevados.Count > 0)
+        {
+            <h4 style="margin-top:20px; color: darkred;">Consumos Elevados nos ultimos 12 meses:</h4>
+            <ul style="color: darkred;">
+                @foreach (var item in ConsumosAguaElevados)
+                {
+                    <li>@item.MesFormatado - @item.ConsumoTotal.ToString() m³</li>
+                }
+            </ul>
+        }
+    </RadzenCard>
+
+    <!-- Consumo de Energia -->
+    <RadzenCard Style="width:45%; min-width:300px;">
+        <h3 style="text-align:center;">Consumo de Energia</h3>
+        <RadzenDataGrid @ref="energiaGrid" Data="@consumosEnergia" TItem="ConsumoEnergiaDto" ShowPagingSummary="true" PageSize="8" AllowPaging="true" EditMode="@editMode">
+            <Columns>
+                <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Property="FormatedDate" Title="Data" />
+                <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Property="Kwh" Title="Consumo (kWh)" />
+                <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Title="Ações">
+                    <Template Context="item">
+                        <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" Click="@(() => EditarConsumoEnergia(item))" />
+                        <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Style="margin-left:5px;" Click="@(() => ExcluiConsumoEnergia(item.Id))" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+        </RadzenDataGrid>
+
+        @if (ConsumosEnergiaElevados.Count > 0)
+        {
+            <h4 style="margin-top:20px; color: darkred;">Consumos Elevados nos ultimos 12 meses:</h4>
+            <ul style="color: darkred;">
+                @foreach (var item in ConsumosEnergiaElevados)
+                {
+                    <li>@item.MesFormatado - @item.ConsumoTotal.ToString() kWh</li>
+                }
+            </ul>
+        }
+    </RadzenCard>
+</div>
 
 <!-- Modal de Edição - Água -->
 <div class="modal-overlay" style="@(exibirModalAgua ? "display:block;" : "display:none;") position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:1000;">
@@ -62,41 +123,89 @@
     </div>
 </div>
 
-<div class="container-grid" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; padding:20px;">
-    <!-- Consumo de Água -->
-    <RadzenCard Style="width:45%; min-width:300px;">
-        <h3 style="text-align:center;">Consumo de Água</h3>
-        <RadzenDataGrid @ref="aguaGrid" Data="@consumosAgua" TItem="ConsumoAguaDto" ShowPagingSummary="true" PageSize="8" AllowPaging="true" EditMode="@editMode">
-            <Columns>
-                <RadzenDataGridColumn TItem="ConsumoAguaDto" Property="Data" Title="Data" />
-                <RadzenDataGridColumn TItem="ConsumoAguaDto" Property="MetrosCubicos" Title="Consumo (m³)" />
-                <RadzenDataGridColumn TItem="ConsumoAguaDto" Title="Ações">
-                    <Template Context="item">
-                        <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" Click="@(() => EditarConsumoAgua(item))" />
-                        <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Style="margin-left:5px;" Click="@(() => ExcluiConsumoAgua(item.Id))" />
-                    </Template>
-                </RadzenDataGridColumn>
-            </Columns>
-        </RadzenDataGrid>
-    </RadzenCard>
+@if (mostrarModalCadastroAgua)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <h3>Cadastro de Consumo de Água</h3>
 
-    <!-- Consumo de Energia -->
-    <RadzenCard Style="width:45%; min-width:300px;">
-        <h3 style="text-align:center;">Consumo de Energia</h3>
-        <RadzenDataGrid @ref="energiaGrid" Data="@consumosEnergia" TItem="ConsumoEnergiaDto" ShowPagingSummary="true" PageSize="8" AllowPaging="true" EditMode="@editMode">
-            <Columns>
-                <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Property="Data" Title="Data" />
-                <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Property="Kwh" Title="Consumo (kWh)" />
-                <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Title="Ações">
-                    <Template Context="item">
-                        <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" Click="@(() => EditarConsumoEnergia(item))" />
-                        <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Style="margin-left:5px;" Click="@(() => ExcluiConsumoEnergia(item.Id))" />
-                    </Template>
-                </RadzenDataGridColumn>
-            </Columns>
-        </RadzenDataGrid>
-    </RadzenCard>
-</div>
+            <EditForm Model="@novoConsumoAgua" OnValidSubmit="SalvarConsumoAgua">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div>
+                    <label>Data do Consumo:</label>
+                    <InputDate @bind-Value="novoConsumoAgua.Data" class="form-control" />
+                </div>
+
+                <div>
+                    <label>Consumo de Água (m³):</label>
+                    <InputNumber @bind-Value="novoConsumoAgua.MetrosCubicos" class="form-control" />
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-secondary" @onclick="FecharModal">Cancelar</button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@if (mostrarModalCadastroEnergia)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <h3>Cadastro de Consumo de Energia</h3>
+
+            <EditForm Model="@novoConsumoEnergia" OnValidSubmit="SalvarConsumoEnergia">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div>
+                    <label>Data do Consumo:</label>
+                    <InputDate @bind-Value="novoConsumoEnergia.Data" class="form-control" />
+                </div>
+
+                <div>
+                    <label>Consumo de Energia (Kw/H):</label>
+                    <InputNumber @bind-Value="novoConsumoEnergia.Kwh" class="form-control" />
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-secondary" @onclick="FecharModal">Cancelar</button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@if (alertaSucessoCadastro)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <h3>Consumo cadastrado com sucesso!</h3>
+
+            <div style="margin-top: 10px;">
+                <button type="button" class="btn btn-secondary" @onclick="FecharAlerta">Entendi</button>
+            </div>
+        </div>
+    </div>
+}
+
+@if (alertaErroCadastro)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <h3>Houve um erro no cadastro</h3>
+
+            <div style="margin-top: 10px;">
+                <button type="button" class="btn btn-secondary" @onclick="FecharAlerta">Entendi</button>
+            </div>
+        </div>
+    </div>
+}
 
 @code {
     RadzenDataGrid<ConsumoAguaDto> aguaGrid;
@@ -106,26 +215,39 @@
     private List<ConsumoAguaDto> consumosAgua = new();
     private List<ConsumoEnergiaDto> consumosEnergia = new();
 
-    // Água
+    private double _consumoAguaAdequado;
+    private double _consumoEnergiaAdequado;
+
+    private List<ConsumoAguaPresentation> ConsumosAguaElevados = new();
+    private List<ConsumoEnergiaPresentation> ConsumosEnergiaElevados = new();
+
     private bool exibirModalAgua = false;
     private ConsumoAguaDto consumoAguaEditando = new();
     private EditContext editContextAgua;
 
-    // Energia
     private bool exibirModalEnergia = false;
     private ConsumoEnergiaDto consumoEnergiaEditando = new();
     private EditContext editContextEnergia;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         consumosAgua = ConsumoService.GetConsumoAgua();
         consumosEnergia = ConsumoService.GetConsumoEnergia();
+
+        _consumoAguaAdequado = await ConsumoService.CalculaConsumoAguaAdequadoAsync();
+        _consumoEnergiaAdequado = await ConsumoService.CalculaConsumoEnergiaAdequadoAsync();
+
+        AtualizaConsumosElevados();
+
+        StateHasChanged();
+
     }
 
     public async Task ExcluiConsumoAgua(Guid id)
     {
         ConsumoService.ExcluiConsumoAgua(id);
         consumosAgua = ConsumoService.GetConsumoAgua();
+        AtualizaConsumosElevados();
         await aguaGrid.Reload();
     }
 
@@ -133,6 +255,7 @@
     {
         ConsumoService.ExcluiConsumoEnergia(id);
         consumosEnergia = ConsumoService.GetConsumoEnergia();
+        AtualizaConsumosElevados();
         await energiaGrid.Reload();
     }
 
@@ -160,6 +283,7 @@
 
         exibirModalAgua = false;
         await aguaGrid.Reload();
+        AtualizaConsumosElevados();
     }
 
     private void FecharModalAgua()
@@ -191,10 +315,100 @@
 
         exibirModalEnergia = false;
         await energiaGrid.Reload();
+        AtualizaConsumosElevados();
     }
 
     private void FecharModalEnergia()
     {
         exibirModalEnergia = false;
+    }
+
+    private bool mostrarModalCadastroAgua = false;
+    private bool mostrarModalCadastroEnergia = false;
+    private bool alertaSucessoCadastro = false;
+    private bool alertaErroCadastro = false;
+
+    private ConsumoAguaDto novoConsumoAgua = new();
+    private ConsumoEnergiaDto novoConsumoEnergia = new();
+
+    private void CadastrarConsumoAgua()
+    {
+        novoConsumoAgua = new();
+        mostrarModalCadastroAgua = true;
+    }
+
+    private void CadastrarConsumoEnergia()
+    {
+        novoConsumoEnergia = new();
+        mostrarModalCadastroEnergia = true;
+    }
+
+    private void FecharModal()
+    {
+        mostrarModalCadastroAgua = false;
+        mostrarModalCadastroEnergia = false;
+    }
+
+    private void FecharAlerta()
+    {
+        alertaSucessoCadastro = false;
+        alertaErroCadastro = false;
+    }
+
+    private async Task SalvarConsumoAgua()
+    {
+        var sucess = await ConsumoService.CadastraConsumoAgua(novoConsumoAgua);
+
+        FecharModal();
+
+        consumosAgua = ConsumoService.GetConsumoAgua();
+
+        AtualizaConsumosElevados();
+
+        if (sucess)
+        {
+            alertaSucessoCadastro = true;
+        }
+        else
+        {
+            alertaErroCadastro = true;
+        }
+    }
+
+    private async Task SalvarConsumoEnergia()
+    {
+        var sucess = await ConsumoService.CadastraConsumoEnergia(novoConsumoEnergia);
+
+        FecharModal();
+
+        consumosEnergia = ConsumoService.GetConsumoEnergia();
+
+        AtualizaConsumosElevados();
+
+        if (sucess)
+        {
+            alertaSucessoCadastro = true;
+        }
+        else
+        {
+            alertaErroCadastro = true;
+        }
+    }
+
+    private void AtualizaConsumosElevados()
+    {
+        ConsumosAguaElevados = ConsumoService.GetConsumoAguaPresentation()
+            .Where(c => c.ConsumoTotal > _consumoAguaAdequado && c.Mes > c.Mes.AddYears(-1))
+            .ToList();
+        
+        ConsumosEnergiaElevados = ConsumoService.GetConsumoEnergiaPresentation()
+            .Where(c => c.ConsumoTotal > _consumoEnergiaAdequado && c.Mes > c.Mes.AddYears(-1))
+            .ToList();
+    }
+
+    private void RealizaSaida()
+    {
+        SessionService.ClearUserId();
+        Navigation.NavigateTo("/");
     }
 }

@@ -7,7 +7,6 @@ using Radzen;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Program.cs (Blazor Server)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=users.db"));
 

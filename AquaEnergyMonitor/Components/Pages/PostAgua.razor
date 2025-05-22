@@ -1,0 +1,133 @@
+﻿@page "/artigo/agua"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<div class="artigo-wrapper">
+    <div class="artigo-content">
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+
+        <h1>💧 Consumo Consciente de Água</h1>
+
+        <img src="images/agua.jpg" alt="Consumo consciente de água" class="artigo-img" />
+
+        <p>
+            A água é um recurso essencial à vida, mas infelizmente é frequentemente desperdiçada. Em tempos de crise hídrica e mudanças climáticas, usar a água de forma consciente é uma responsabilidade de todos nós.
+        </p>
+
+        <h2>Dicas práticas para economizar água</h2>
+        <ul>
+            <li>Feche a torneira ao escovar os dentes ou lavar a louça.</li>
+            <li>Conserte vazamentos assim que forem identificados.</li>
+            <li>Use baldes para lavar o carro em vez de mangueiras.</li>
+            <li>Capte água da chuva para regar plantas ou lavar áreas externas.</li>
+            <li>Reduza o tempo no banho.</li>
+        </ul>
+
+        <h2>Por que isso é importante?</h2>
+        <p>
+            Apesar de 70% da superfície da Terra ser coberta por água, apenas cerca de 1% está disponível para consumo humano. O desperdício pode levar ao esgotamento de mananciais e à escassez em regiões inteiras.
+        </p>
+
+        <h2>Benefícios da conscientização</h2>
+        <ul>
+            <li>Preservação dos recursos hídricos.</li>
+            <li>Redução da conta de água.</li>
+            <li>Contribuição direta para a sustentabilidade do planeta.</li>
+        </ul>
+
+        <p>
+            A mudança começa em casa. Cada litro economizado representa um passo importante rumo a um futuro mais equilibrado e sustentável.
+        </p>
+
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+    </div>
+</div>
+
+<style>
+    .artigo-wrapper {
+        padding: 40px 20px;
+        background-color: #f9f9f9;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .artigo-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .back-button {
+        background: none;
+        border: none;
+        color: #007bff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: color 0.3s;
+    }
+
+    .back-button:hover {
+        color: #0056b3;
+    }
+
+    h1 {
+        color: #0277bd;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        margin-top: 30px;
+        color: #333;
+        font-size: 1.5rem;
+        border-left: 4px solid #0288d1;
+        padding-left: 10px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+        margin-top: 15px;
+    }
+
+    ul {
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+
+    ul li {
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+        color: #555;
+    }
+
+    .artigo-img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 25px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .primary-button {
+        margin-top: 40px;
+        background-color: #0288d1;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .primary-button:hover {
+        background-color: #01579b;
+    }
+</style>

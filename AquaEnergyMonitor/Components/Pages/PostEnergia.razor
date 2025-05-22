@@ -1,0 +1,134 @@
+﻿@page "/artigo/energia"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<div class="artigo-wrapper">
+    <div class="artigo-content">
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+
+        <h1>⚡ Consumo Consciente de Energia Elétrica</h1>
+
+        <img src="images/energia.jpg" alt="Economia de energia"
+             class="artigo-img" />
+
+        <p>
+            A energia elétrica está presente em todos os aspectos da nossa vida moderna. No entanto, seu uso excessivo e sem consciência pode gerar não apenas custos elevados, mas também sérios impactos ambientais. Adotar hábitos mais responsáveis no consumo de energia é essencial.
+        </p>
+
+        <h2>Dicas práticas para economizar energia</h2>
+        <ul>
+            <li>Desligue aparelhos da tomada quando não estiverem sendo usados.</li>
+            <li>Substitua lâmpadas incandescentes por modelos LED.</li>
+            <li>Utilize eletrodomésticos em modo econômico, sempre que possível.</li>
+            <li>Mantenha geladeiras e freezers em bom estado e evite deixá-los abertos por muito tempo.</li>
+            <li>Apague luzes ao sair de um ambiente.</li>
+        </ul>
+
+        <h2>Impacto ambiental</h2>
+        <p>
+            A maior parte da energia elétrica ainda é gerada a partir de fontes não renováveis, que emitem gases poluentes. Ao reduzir nosso consumo, contribuímos para a diminuição da demanda energética e dos impactos ambientais negativos.
+        </p>
+
+        <h2>Benefícios da conscientização</h2>
+        <ul>
+            <li>Redução significativa nas contas de luz.</li>
+            <li>Preservação dos recursos naturais.</li>
+            <li>Contribuição para um futuro mais sustentável e saudável.</li>
+        </ul>
+
+        <p>
+            Pequenas ações no dia a dia fazem toda a diferença. Seja um agente da mudança e promova o consumo consciente de energia elétrica.
+        </p>
+
+        <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
+    </div>
+</div>
+
+<style>
+    .artigo-wrapper {
+        padding: 40px 20px;
+        background-color: #f9f9f9;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .artigo-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .back-button {
+        background: none;
+        border: none;
+        color: #007bff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: color 0.3s;
+    }
+
+    .back-button:hover {
+        color: #0056b3;
+    }
+
+    h1 {
+        color: #f57f17;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        margin-top: 30px;
+        color: #333;
+        font-size: 1.5rem;
+        border-left: 4px solid #f57f17;
+        padding-left: 10px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+        margin-top: 15px;
+    }
+
+    ul {
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+
+    ul li {
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+        color: #555;
+    }
+
+    .artigo-img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 25px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .primary-button {
+        margin-top: 40px;
+        background-color: #f57f17;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .primary-button:hover {
+        background-color: #e65100;
+    }
+</style>

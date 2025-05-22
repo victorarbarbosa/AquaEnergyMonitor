@@ -15,35 +15,63 @@ namespace AquaEnergyMonitor.Services
             _sessionService = sessionService;
         }
 
+        public async Task<double> CalculaConsumoAguaAdequadoAsync()
+        {
+            var userId = _sessionService.UserId;
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(userId));
+
+            if (usuario == null)
+                return 0;
+
+            return usuario.QuantPessoas * 4.5;
+        }
+
+        public async Task<double> CalculaConsumoEnergiaAdequadoAsync()
+        {
+            var userId = _sessionService.UserId;
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(userId));
+
+            if (usuario == null)
+                return 0;
+
+            return usuario.QuantPessoas * 70.0; // 70 kWh por pessoa
+        }
+
         public List<ConsumoAguaDto> GetConsumoAgua()
         {
             return _context.ConsumoAgua.Select(c => new ConsumoAguaDto { Id = c.Id, Data = c.Data, MetrosCubicos = c.ConsumoMetrosCubicos })
+                .OrderByDescending(c => c.Data)
                 .ToList();
         }
 
         public List<ConsumoEnergiaDto> GetConsumoEnergia()
         {
             return _context.ConsumoEnergia.Select(c => new ConsumoEnergiaDto { Id = c.Id, Data = c.Data, Kwh = c.ConsumoKiloWatts })
+                .OrderByDescending(c => c.Data)
                 .ToList();
         }
 
         public List<ConsumoAguaPresentation> GetConsumoAguaPresentation()
         {
-            return _context.ConsumoAgua.Where(c => c.Data >= DateTime.Today.AddYears(-1))
-                .GroupBy(c => new { c.Id, c.Data.Year, c.Data.Month })
+            return _context.ConsumoAgua.Where(c => c.Data >= DateTime.Today.AddYears(-1)).ToList()
+                .Select(c => new
+                {
+                    MesAno = new DateTime(c.Data.Year, c.Data.Month, 1),
+                    c.ConsumoMetrosCubicos
+                })
+                .GroupBy(x => x.MesAno)
                 .Select(g => new ConsumoAguaPresentation
                 {
-                    Id = g.Key.Id,
-                    Mes = new DateTime(g.Key.Year, g.Key.Month, 1).ToString("MM/yyyy"),
+                    Mes = g.Key,
                     ConsumoTotal = g.Sum(c => c.ConsumoMetrosCubicos)
                 })
-                .OrderByDescending(c => c.Mes)
+                .OrderBy(x => x.Mes)
                 .ToList();
         }
 
         public async Task<bool> CadastraConsumoAgua(ConsumoAguaDto cadastroAgua)
         {
-            var userId = await _sessionService.GetUserId();
+            var userId = _sessionService.UserId;
 
             var user = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(userId));
 
@@ -65,21 +93,25 @@ namespace AquaEnergyMonitor.Services
 
         public List<ConsumoEnergiaPresentation> GetConsumoEnergiaPresentation()
         {
-            return _context.ConsumoEnergia.Where(c => c.Data >= DateTime.Today.AddYears(-1))
-                .GroupBy(c => new { c.Id, c.Data.Year, c.Data.Month })
+            return _context.ConsumoEnergia.Where(c => c.Data >= DateTime.Today.AddYears(-1)).ToList()
+                .Select(c => new
+                {
+                    MesAno = new DateTime(c.Data.Year, c.Data.Month, 1),
+                    c.ConsumoKiloWatts
+                })
+                .GroupBy(x => x.MesAno)
                 .Select(g => new ConsumoEnergiaPresentation
                 {
-                    Id = g.Key.Id,
-                    Mes = new DateTime(g.Key.Year, g.Key.Month, 1).ToString("MM/yyyy"),
+                    Mes = g.Key,
                     ConsumoTotal = g.Sum(c => c.ConsumoKiloWatts)
                 })
-                .OrderByDescending(c => c.Mes)
+                .OrderBy(x => x.Mes)
                 .ToList();
         }
 
         public async Task<bool> CadastraConsumoEnergia(ConsumoEnergiaDto cadastroEnergia)
         {
-            var userId = await _sessionService.GetUserId();
+            var userId = _sessionService.UserId;
 
             var user = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(userId));
 
@@ -140,14 +172,28 @@ namespace AquaEnergyMonitor.Services
     public class ConsumoAguaPresentation
     {
         public Guid Id { get; set; }
-        public string Mes { get; set; }
+        public DateTime Mes { get; set; }
         public double ConsumoTotal { get; set; }
+        public string MesFormatado
+        {
+            get
+            {
+                return Mes.ToString("MM/yyyy");
+            }
+        }
     }
 
     public class ConsumoEnergiaPresentation
     {
         public Guid Id { get; set; }
-        public string Mes { get; set; }
+        public DateTime Mes { get; set; }
         public double ConsumoTotal { get; set; }
+        public string MesFormatado
+        {
+            get
+            {
+                return Mes.ToString("MM/yyyy");
+            }
+        }
     }
 }

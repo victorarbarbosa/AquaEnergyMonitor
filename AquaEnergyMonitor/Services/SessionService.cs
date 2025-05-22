@@ -1,30 +1,10 @@
-﻿using Blazored.LocalStorage;
-
-namespace AquaEnergyMonitor.Services
+﻿namespace AquaEnergyMonitor.Services
 {
     public class SessionService
     {
-        private readonly ILocalStorageService _localStorage;
+        public Guid? UserId { get; private set; }
 
-        public SessionService(ILocalStorageService localStorage)
-        {
-            _localStorage = localStorage;
-        }
-
-        public async Task SetUserId(Guid userId)
-        {
-            await _localStorage.SetItemAsync("userId", userId.ToString());
-        }
-
-        public async Task<Guid?> GetUserId()
-        {
-            var userId = await _localStorage.GetItemAsync<string>("userId");
-            return Guid.TryParse(userId, out var result) ? result : (Guid?)null;
-        }
-
-        public async Task ClearUserId()
-        {
-            await _localStorage.RemoveItemAsync("userId");
-        }
+        public void SetUserId(Guid id) => UserId = id;
+        public void ClearUserId() => UserId = null;
     }
 }

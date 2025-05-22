@@ -153,7 +153,6 @@ C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEner
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AquaEnergyMonitor.props
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
-C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Pages\Cadastro.razor.rz.scp.css
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Pages\Home.razor.rz.scp.css
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Pages\WelcomePage.razor.rz.scp.css
@@ -424,3 +423,4 @@ C:\Users\victo\OneDrive\Documentos\Repositorios\AquaEnergy\AquaEnergyMonitor\Aqu
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\bin\Debug\net8.0\Blazored.LocalStorage.dll
 C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Pages\ListagemConsumo.razor.rz.scp.css
 C:\Users\victo\OneDrive\Documentos\Repositorios\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Pages\Perfil.razor.rz.scp.css
+C:\Users\Victor\Desktop\Estudos e Projetos\AquaEnergy\AquaEnergyMonitor\AquaEnergyMonitor\obj\Debug\net8.0\scopedcss\Components\Pages\Perfil.razor.rz.scp.css
