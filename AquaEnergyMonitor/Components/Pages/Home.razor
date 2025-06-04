@@ -39,6 +39,10 @@
             <RadzenSeriesMeanLine Visible="true" Stroke="var(--rz-danger-dark)" LineType="LineType.Dashed" />
         </RadzenColumnSeries>
     </RadzenChart>
+
+    <div style="text-align: center; margin-top: 15px;">
+        <RadzenButton Click="@(args => NavManager.NavigateTo("/consumos"))" Text="Editar Consumo" ButtonStyle="ButtonStyle.Primary" />
+    </div>
 </div>
 
 <div class="energia-container">
@@ -61,6 +65,10 @@
             <RadzenSeriesMeanLine Visible="true" Stroke="var(--rz-danger-dark)" LineType="LineType.Dashed" />
         </RadzenColumnSeries>
     </RadzenChart>
+
+    <div style="text-align: center; margin-top: 15px;">
+        <RadzenButton Click="@(args => NavManager.NavigateTo("/consumos"))" Text="Editar Consumo" ButtonStyle="ButtonStyle.Primary" />
+    </div>
 </div>
 
 @if (mostrarModalCadastroAgua)
@@ -71,7 +79,6 @@
 
             <EditForm Model="@novoConsumoAgua" OnValidSubmit="SalvarConsumoAgua">
                 <DataAnnotationsValidator />
-                <ValidationSummary />
 
                 <div>
                     <label>Data do Consumo:</label>
@@ -81,6 +88,7 @@
                 <div>
                     <label>Consumo de Água (m³):</label>
                     <InputNumber @bind-Value="novoConsumoAgua.MetrosCubicos" class="form-control" />
+                    <ValidationMessage For="@(() => novoConsumoAgua.MetrosCubicos)" />
                 </div>
 
                 <div style="margin-top: 10px;">
@@ -97,10 +105,9 @@
     <div class="modal-overlay">
         <div class="modal-content">
             <h3>Cadastro de Consumo de Energia</h3>
-
+            
             <EditForm Model="@novoConsumoEnergia" OnValidSubmit="SalvarConsumoEnergia">
                 <DataAnnotationsValidator />
-                <ValidationSummary />
 
                 <div>
                     <label>Data do Consumo:</label>
@@ -110,6 +117,7 @@
                 <div>
                     <label>Consumo de Energia (Kw/H):</label>
                     <InputNumber @bind-Value="novoConsumoEnergia.Kwh" class="form-control" />
+                    <ValidationMessage For="@(() => novoConsumoEnergia.Kwh)" />
                 </div>
 
                 <div style="margin-top: 10px;">
@@ -149,39 +157,43 @@
 
 <h1 style="text-align: center; margin-top: 50px;">Posts de Conscientização</h1>
 <div class="awareness-cards" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 40px auto; max-width: 1500px;">
-    <div class="card" @onclick=NavigateToAgua
-         style="cursor: pointer; background-color: #e3f2fd; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
+    <div class="card"
+    style="background-color: #e3f2fd; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
         <img src="images/agua.jpg" alt="Economize Água" style="width: 100%; height: 180px; object-fit: cover;" />
         <div style="padding: 15px;">
             <h4 style="color: #0d47a1;">💧 Economize Água</h4>
             <p>Feche a torneira enquanto escova os dentes ou ensaboa a louça. Economize até 30 litros por dia!</p>
+            <RadzenButton Text="Saiba mais" ButtonStyle="ButtonStyle.Light" Style="margin-top: 10px;" Click=@NavigateToAgua />
         </div>
     </div>
 
-    <div class="card" @onclick=NavigateToEnergia
-         style="cursor: pointer; background-color: #fffde7; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
+    <div class="card"
+    style="background-color: #fffde7; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
         <img src="images/energia.jpg" alt="Economize Energia" style="width: 100%; height: 180px; object-fit: cover;" />
         <div style="padding: 15px;">
             <h4 style="color: #f57f17;">⚡ Consumo Consciente</h4>
             <p>Desligue aparelhos da tomada. O modo standby também consome energia!</p>
+            <RadzenButton Text="Saiba mais" ButtonStyle="ButtonStyle.Light" Style="margin-top: 10px;" Click=@NavigateToEnergia />
         </div>
     </div>
 
-    <div class="card" @onclick=NavigateToSustentavel
-         style="cursor: pointer; background-color: #f1f8e9; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
+    <div class="card"
+    style="background-color: #f1f8e9; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
         <img src="images/sustentabilidade.jpg" alt="Sustentabilidade" style="width: 100%; height: 180px; object-fit: cover;" />
         <div style="padding: 15px;">
             <h4 style="color: #33691e;">🌱 Pequenas Ações</h4>
             <p>Lâmpadas LED, vazamentos reparados, banho mais curto. Ações simples, impacto real!</p>
+            <RadzenButton Text="Saiba mais" ButtonStyle="ButtonStyle.Light" Style="margin-top: 10px;" Click=@NavigateToSustentavel />
         </div>
     </div>
 
-    <div class="card" @onclick=NavigateToDicas
-         style="cursor: pointer; background-color: #e0d3f5; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
+    <div class="card"
+    style="background-color: #e0d3f5; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; overflow: hidden;">
         <img src="images/dicas.jpg" alt="Sustentabilidade" style="width: 100%; height: 180px; object-fit: cover;" />
         <div style="padding: 15px;">
             <h4 style="color: #7b1fa2;">Dicas Práticas</h4>
             <p>Adote hábitos simples que fazem grande diferença na economia de água e energia.</p>
+            <RadzenButton Text="Saiba mais" ButtonStyle="ButtonStyle.Light" Style="margin-top: 10px;" Click=@NavigateToDicas />
         </div>
     </div>
 </div>
@@ -190,15 +202,15 @@
     public class ConsumoEnergiaDto
     {
         public Guid Id { get; set; }
-        [Required]
-        public DateTime Data { get; set; } = DateTime.Now;
-        [Required]
-        public double Kwh { get; set; }
+        [Required(ErrorMessage = "Data do consumo é obrigatória.")]
+        public DateTime? Data { get; set; } = DateTime.Now;
+        [Required(ErrorMessage = "Consumo em Kw/H obrigatório.")]
+        public double? Kwh { get; set; } = 0;
         public string FormatedDate
         {
             get
             {
-                return Data.ToString("dd/MM/yyyy");
+                return Data.Value.ToString("dd/MM/yyyy");
             }
         }
     }
@@ -206,15 +218,15 @@
     public class ConsumoAguaDto
     {
         public Guid Id { get; set; }
-        [Required]
-        public DateTime Data { get; set; } = DateTime.Now;
-        [Required]
-        public double MetrosCubicos { get; set; }
+        [Required(ErrorMessage = "Data do consumo é obrigatória.")]
+        public DateTime? Data { get; set; } = DateTime.Now;
+        [Required(ErrorMessage = "Consumo em metros cubicos é obrigatório.")]
+        public double? MetrosCubicos { get; set; } = 0;
         public string FormatedDate
         {
             get
             {
-                return Data.ToString("dd/MM/yyyy");
+                return Data.Value.ToString("dd/MM/yyyy");
             }
         }
     }
@@ -284,12 +296,20 @@
 
     private double GetMaxAxisAgua()
     {
-        return ConsumoService.GetConsumoAguaPresentation().Max(c => c.ConsumoTotal) + 20;
+        var consumos = ConsumoService.GetConsumoAguaPresentation();
+        if (consumos != null && consumos.Count() > 0)
+            return consumos.Max(c => c.ConsumoTotal) + 20;
+
+        return 500;
     }
 
     private double GetMaxAxisEnergia()
     {
-        return ConsumoService.GetConsumoEnergiaPresentation().Max(c => c.ConsumoTotal) + 20;
+        var consumos = ConsumoService.GetConsumoEnergiaPresentation();
+        if (consumos != null && consumos.Count() > 0)
+            return consumos.Max(c => c.ConsumoTotal) + 20;
+
+        return 500;
     }
 
     private void NavigateToAgua() => NavManager.NavigateTo("/artigo/agua");

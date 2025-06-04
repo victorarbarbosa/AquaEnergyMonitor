@@ -14,17 +14,34 @@
 
         <EditForm Model="@LoginModel" OnValidSubmit="Logar" FormName="Login">
             <DataAnnotationsValidator />
-            <ValidationSummary />
 
-            <InputText @bind-Value="LoginModel.Email" class="form-control mb-2" placeholder="E-mail" />
-            <InputText @bind-Value="LoginModel.Senha" type="password" class="form-control mb-2" placeholder="Senha" />
+            <div style="margin-bottom: 15px;">
+                <InputText @bind-Value="LoginModel.Email" class="form-control" placeholder="E-mail" />
+                <ValidationMessage For="@(() => LoginModel.Email)" style="font-size: 15px; text-align: left;" />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <div class="position-relative">
+                    <InputText @bind-Value="LoginModel.Senha"
+                               type="@SenhaInputType"
+                               class="form-control"
+                               placeholder="Senha" />
+                    <button type="button"
+                            class="btn btn-sm btn-link position-absolute"
+                            style="top: 50%; right: 10px; transform: translateY(-50%);"
+                            @onclick="ToggleSenhaVisibility">
+                        <i class="@SenhaIconClass text-dark"></i>
+                    </button>
+                </div>
+                <ValidationMessage For="@(() => LoginModel.Senha)" style="font-size: 15px; text-align: left;" />
+            </div>
 
             @if (!string.IsNullOrEmpty(Erro))
             {
                 <div class="alert alert-danger mt-2">@Erro</div>
             }
 
-            <button type="submit" class="btn btn-primary w-100 mt-2">Entrar</button>
+            <button type="submit" class="btn btn-primary w-100 mt-4">Entrar</button>
 
             <div class="mt-3">
                 <span>Não tem uma conta?</span>
@@ -37,6 +54,14 @@
 @code {
     private LoginModel LoginModel { get; set; } = new();
     private string Erro { get; set; }
+
+    private string SenhaInputType { get; set; } = "password";
+    private string SenhaIconClass => SenhaInputType == "password" ? "bi bi-eye-slash" : "bi bi-eye";
+
+    private void ToggleSenhaVisibility()
+    {
+        SenhaInputType = SenhaInputType == "password" ? "text" : "password";
+    }
 
     private async Task Logar()
     {

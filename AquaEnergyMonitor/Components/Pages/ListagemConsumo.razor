@@ -7,6 +7,7 @@
 @inject ConsumoService ConsumoService
 @inject SessionService SessionService
 @inject NavigationManager Navigation
+@inject IJSRuntime JS
 
 <header class="site-header">
     <h2 class="header-title" style="display:inline;">AquaEnergyMonitor</h2>
@@ -23,6 +24,9 @@
     <!-- Consumo de Água -->
     <RadzenCard Style="width:45%; min-width:300px;">
         <h3 style="text-align:center;">Consumo de Água</h3>
+        <p style="margin-bottom: 15px;">
+            A média de 4,5 m³ por pessoa/mês, recomendada por órgãos como a ANA para um uso racional e sem
+            desperdício é utilizada no calculo de alerta de consumo.</p>
         <RadzenDataGrid @ref="aguaGrid" Data="@consumosAgua" TItem="ConsumoAguaDto" ShowPagingSummary="true" PageSize="8" AllowPaging="true" EditMode="@editMode">
             <Columns>
                 <RadzenDataGridColumn TItem="ConsumoAguaDto" Property="FormatedDate" Title="Data" />
@@ -51,6 +55,8 @@
     <!-- Consumo de Energia -->
     <RadzenCard Style="width:45%; min-width:300px;">
         <h3 style="text-align:center;">Consumo de Energia</h3>
+        <p style="margin-bottom: 15px;">A média de 70 kWh por pessoa/mês, baseada em dados da EPE e ANEEL para um consumo eficiente em residências é 
+            utilizado no calculo de alerta de consumo.</p>
         <RadzenDataGrid @ref="energiaGrid" Data="@consumosEnergia" TItem="ConsumoEnergiaDto" ShowPagingSummary="true" PageSize="8" AllowPaging="true" EditMode="@editMode">
             <Columns>
                 <RadzenDataGridColumn TItem="ConsumoEnergiaDto" Property="FormatedDate" Title="Data" />
@@ -128,10 +134,9 @@
     <div class="modal-overlay">
         <div class="modal-content">
             <h3>Cadastro de Consumo de Água</h3>
-
+            <p>Média de 4,5 m³ por pessoa/mês, recomendada por órgãos como a ANA para um uso racional e sem desperdício.</p>
             <EditForm Model="@novoConsumoAgua" OnValidSubmit="SalvarConsumoAgua">
                 <DataAnnotationsValidator />
-                <ValidationSummary />
 
                 <div>
                     <label>Data do Consumo:</label>
@@ -141,6 +146,7 @@
                 <div>
                     <label>Consumo de Água (m³):</label>
                     <InputNumber @bind-Value="novoConsumoAgua.MetrosCubicos" class="form-control" />
+                    <ValidationMessage For="@(() => novoConsumoAgua.MetrosCubicos)" />
                 </div>
 
                 <div style="margin-top: 10px;">
@@ -157,10 +163,9 @@
     <div class="modal-overlay">
         <div class="modal-content">
             <h3>Cadastro de Consumo de Energia</h3>
-
+            <p>Média de 70 kWh por pessoa/mês, baseada em dados da EPE e ANEEL para um consumo eficiente em residências.</p>
             <EditForm Model="@novoConsumoEnergia" OnValidSubmit="SalvarConsumoEnergia">
                 <DataAnnotationsValidator />
-                <ValidationSummary />
 
                 <div>
                     <label>Data do Consumo:</label>
@@ -170,6 +175,7 @@
                 <div>
                     <label>Consumo de Energia (Kw/H):</label>
                     <InputNumber @bind-Value="novoConsumoEnergia.Kwh" class="form-control" />
+                    <ValidationMessage For="@(() => novoConsumoEnergia.Kwh)" />
                 </div>
 
                 <div style="margin-top: 10px;">
@@ -241,6 +247,14 @@
 
         StateHasChanged();
 
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("eval", "window.scrollTo(0, 0)");
+        }
     }
 
     public async Task ExcluiConsumoAgua(Guid id)

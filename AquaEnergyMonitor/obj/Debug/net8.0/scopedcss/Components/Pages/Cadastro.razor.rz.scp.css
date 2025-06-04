@@ -22,7 +22,7 @@
 .form-title[b-cb44y0cl8n] {
     text-align: center;
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.8rem;
 }
 
@@ -40,5 +40,9 @@
 
 /* Espaço entre elementos gerais */
 .form-group[b-cb44y0cl8n] {
-    margin-top: 1rem;
+    display: block;
+}
+
+.form-control[b-cb44y0cl8n] {
+    display: block;
 }

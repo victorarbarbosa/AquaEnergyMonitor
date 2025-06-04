@@ -2,4 +2,9 @@ wwwroot\app.css
 wwwroot\bootstrap\bootstrap.min.css
 wwwroot\bootstrap\bootstrap.min.css.map
 wwwroot\favicon.png
+wwwroot\images\agua.jpg
+wwwroot\images\dicas.jpg
+wwwroot\images\energia.jpg
 wwwroot\images\hidreletrica.jpg
+wwwroot\images\sustentabilidade.jpg
+wwwroot\images\torneira.jpg

@@ -23,7 +23,7 @@ namespace AquaEnergyMonitor.Services
             if (usuario == null)
                 return 0;
 
-            return usuario.QuantPessoas * 4.5;
+            return usuario.QuantPessoas.Value * 4.5; 
         }
 
         public async Task<double> CalculaConsumoEnergiaAdequadoAsync()
@@ -34,26 +34,43 @@ namespace AquaEnergyMonitor.Services
             if (usuario == null)
                 return 0;
 
-            return usuario.QuantPessoas * 70.0; // 70 kWh por pessoa
+            return usuario.QuantPessoas.Value * 70.0; // 70 kWh por pessoa
         }
 
         public List<ConsumoAguaDto> GetConsumoAgua()
         {
-            return _context.ConsumoAgua.Select(c => new ConsumoAguaDto { Id = c.Id, Data = c.Data, MetrosCubicos = c.ConsumoMetrosCubicos })
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(_sessionService.UserId));
+
+            return _context.ConsumoAgua.Where(c => c.UsuarioId == usuario.Id)
+                .Where(c => c.UsuarioId.Equals(usuario.Id))
+                .Select(c => new ConsumoAguaDto { Id = c.Id, Data = c.Data, MetrosCubicos = c.ConsumoMetrosCubicos })
                 .OrderByDescending(c => c.Data)
                 .ToList();
         }
 
         public List<ConsumoEnergiaDto> GetConsumoEnergia()
         {
-            return _context.ConsumoEnergia.Select(c => new ConsumoEnergiaDto { Id = c.Id, Data = c.Data, Kwh = c.ConsumoKiloWatts })
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(_sessionService.UserId));
+
+            return _context.ConsumoEnergia.Where(c => c.UsuarioId == usuario.Id)
+                .Where(c => c.UsuarioId.Equals(usuario.Id))
+                .Select(c => new ConsumoEnergiaDto { Id = c.Id, Data = c.Data, Kwh = c.ConsumoKiloWatts })
                 .OrderByDescending(c => c.Data)
                 .ToList();
         }
 
         public List<ConsumoAguaPresentation> GetConsumoAguaPresentation()
         {
-            return _context.ConsumoAgua.Where(c => c.Data >= DateTime.Today.AddYears(-1)).ToList()
+            var userId = _sessionService.UserId;
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(userId));
+
+            if (usuario == null)
+                return new List<ConsumoAguaPresentation>();
+
+            return _context.ConsumoAgua
+                .Where(c => c.Data >= DateTime.Today.AddYears(-1))
+                .Where(c => c.UsuarioId == usuario.Id)
+                .ToList()
                 .Select(c => new
                 {
                     MesAno = new DateTime(c.Data.Year, c.Data.Month, 1),
@@ -80,8 +97,8 @@ namespace AquaEnergyMonitor.Services
             var consumoAgua = new ConsumoAgua
             {
                 Id = Guid.NewGuid(),
-                Data = cadastroAgua.Data,
-                ConsumoMetrosCubicos = cadastroAgua.MetrosCubicos,
+                Data = cadastroAgua.Data.Value,
+                ConsumoMetrosCubicos = cadastroAgua.MetrosCubicos.Value,
                 Usuario = user
             };
 
@@ -93,7 +110,15 @@ namespace AquaEnergyMonitor.Services
 
         public List<ConsumoEnergiaPresentation> GetConsumoEnergiaPresentation()
         {
-            return _context.ConsumoEnergia.Where(c => c.Data >= DateTime.Today.AddYears(-1)).ToList()
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Id.Equals(_sessionService.UserId));
+
+            if (usuario == null)
+                return new List<ConsumoEnergiaPresentation>();
+
+            return _context.ConsumoEnergia
+                .Where(c => c.Data >= DateTime.Today.AddYears(-1))
+                .Where(c => c.UsuarioId == usuario.Id)
+                .ToList()
                 .Select(c => new
                 {
                     MesAno = new DateTime(c.Data.Year, c.Data.Month, 1),
@@ -120,8 +145,8 @@ namespace AquaEnergyMonitor.Services
             var consumoEnergia = new ConsumoEnergia
             {
                 Id = Guid.NewGuid(),
-                Data = cadastroEnergia.Data,
-                ConsumoKiloWatts = cadastroEnergia.Kwh,
+                Data = cadastroEnergia.Data.Value,
+                ConsumoKiloWatts = cadastroEnergia.Kwh.Value,
                 Usuario = user
             };
 
@@ -150,8 +175,8 @@ namespace AquaEnergyMonitor.Services
             var entity = _context.ConsumoAgua.FirstOrDefault(x => x.Id == dto.Id);
             if (entity != null)
             {
-                entity.Data = dto.Data;
-                entity.ConsumoMetrosCubicos = dto.MetrosCubicos;
+                entity.Data = dto.Data.Value;
+                entity.ConsumoMetrosCubicos = dto.MetrosCubicos.Value;
                 _context.SaveChanges();
             }
         }
@@ -161,8 +186,8 @@ namespace AquaEnergyMonitor.Services
             var entity = _context.ConsumoEnergia.FirstOrDefault(x => x.Id == dto.Id);
             if (entity != null)
             {
-                entity.Data = dto.Data;
-                entity.ConsumoKiloWatts = dto.Kwh;
+                entity.Data = dto.Data.Value;
+                entity.ConsumoKiloWatts = dto.Kwh.Value;
                 _context.SaveChanges();
             }
         }

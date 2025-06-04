@@ -11,42 +11,103 @@
 
 <div class="page-background">
     <div class="form-container">
-        <h2 class="form-title">Cadastro de Usuário</h2>
+        <h3 class="form-title">Cadastro de Usuário</h3>
 
         <EditForm Model="@User" OnValidSubmit="Cadastrar" FormName="cadastro">
             <DataAnnotationsValidator />
-            <ValidationSummary />
 
             <div class="form-grid">
-                <InputText @bind-Value="User.Nome" class="form-control" type="text" placeholder="Nome" />
+                <div class="form-group">
+                    <InputText @bind-Value="User.Nome" class="form-control" placeholder="Nome" />
+                    <ValidationMessage For="@(() => User.Nome)" style="font-size: 15px;"/>
+                </div>
 
-                <InputText @bind-Value="User.Sobrenome" class="form-control" placeholder="Sobrenome" />
+                <div class="form-group">
+                    <InputText @bind-Value="User.Sobrenome" class="form-control" placeholder="Sobrenome" />
+                    <ValidationMessage For="@(() => User.Sobrenome)" style="font-size: 15px;" />
+                </div>
 
-                <InputText @bind-Value="User.Email" type="email" class="form-control form-grid-full" placeholder="E-mail" />
+                <div class="form-group form-grid-full">
+                    <InputText @bind-Value="User.Email" type="email" class="form-control" placeholder="E-mail" />
+                    <ValidationMessage For="@(() => User.Email)" style="font-size: 15px;" />
+                </div>
 
-                <InputText @bind-Value="User.Senha" type="password" class="form-control" placeholder="Senha" />
+                <!-- Campos de senha lado a lado -->
+                <div class="form-group form-grid-full d-flex gap-3">
+                    <div class="flex-fill">
+                        <div class="d-flex flex-column position-relative">
+                            <div class="position-relative">
+                                <InputText @bind-Value="User.Senha"
+                                           type="@SenhaInputType"
+                                           class="form-control"
+                                           placeholder="Senha" />
+                                <button type="button"
+                                        class="btn btn-sm btn-link position-absolute"
+                                        style="top: 50%; right: 10px; transform: translateY(-50%);"
+                                        @onclick="ToggleSenhaVisibility">
+                                    <i class="@SenhaIconClass text-dark"></i>
+                                </button>
+                            </div>
+                            <ValidationMessage For="@(() => User.Senha)" style="font-size: 15px;" />
+                        </div>
+                    </div>
 
-                <InputText @bind-Value="User.ConfirmaSenha" type="password" class="form-control" placeholder="Confirmar Senha" />
+                    <div class="flex-fill">
+                        <div class="d-flex flex-column position-relative">
+                            <div class="position-relative">
+                                <InputText @bind-Value="User.ConfirmaSenha"
+                                           type="@ConfirmaSenhaInputType"
+                                           class="form-control"
+                                           placeholder="Confirmar Senha" />
+                                <button type="button"
+                                        class="btn btn-sm btn-link position-absolute"
+                                        style="top: 50%; right: 10px; transform: translateY(-50%);"
+                                        @onclick="ToggleConfirmaSenhaVisibility">
+                                    <i class="@ConfirmaSenhaIconClass text-dark"></i>
+                                </button>
+                            </div>
+                            <ValidationMessage For="@(() => User.ConfirmaSenha)" style="font-size: 15px;" />
+                        </div>
+                    </div>
+                </div>
 
-                <InputText @bind-Value="User.Endereco" class="form-control form-grid-full" placeholder="Endereço (Rua e Número)" />
+                <div class="form-group">
+                    <InputText @bind-Value="User.Endereco" class="form-control" placeholder="Endereço (Rua e Número)" />
+                    <ValidationMessage For="@(() => User.Endereco)" style="font-size: 15px;" />
+                </div>
 
-                <InputText @bind-Value="User.Cidade" class="form-control" placeholder="Cidade" />
+                <div class="form-group">
+                    <InputText @bind-Value="User.Cidade" class="form-control" placeholder="Cidade" />
+                    <ValidationMessage For="@(() => User.Cidade)" style="font-size: 15px;" />
+                </div>
 
-                <InputText @bind-Value="User.Estado" class="form-control" placeholder="Estado" />
+                <div class="form-group">
+                    <InputText @bind-Value="User.Estado" class="form-control" placeholder="Estado" />
+                    <ValidationMessage For="@(() => User.Estado)" style="font-size: 15px;" />
+                </div>
 
-                <InputText @bind-Value="User.Cep" class="form-control form-grid-full" placeholder="CEP" />
+                <div class="form-group">
+                    <InputText @bind-Value="User.Cep" class="form-control" placeholder="CEP" />
+                    <ValidationMessage For="@(() => User.Cep)" style="font-size: 15px;" />
+                </div>
             </div>
 
-            <div class="form-group mt-2">
-                <label>Tipo de Perfil:</label><br />
-                <InputRadioGroup @bind-Value="User.Perfil">
-                    <InputRadio Value="@TipoPerfilEnum.Residencial" /> Residencial
-                    <InputRadio Value="@TipoPerfilEnum.Organizacional" class="ms-2" /> Organizacional
-                </InputRadioGroup>
+            <div class="d-flex gap-3 mt-3">
+                <div class="flex-fill w-25">
+                    <label>Tipo de Perfil:</label><br />
+                    <InputRadioGroup @bind-Value="User.Perfil">
+                        <InputRadio Value="@TipoPerfilEnum.Residencial" /> Residencial
+                        <InputRadio Value="@TipoPerfilEnum.Organizacional" class="ms-3" /> Organizacional
+                    </InputRadioGroup>
+                </div>
+
+                <div class="flex-fill w-25">
+                    <label>Quantidade de residentes:</label>
+                    <InputNumber @bind-Value="User.QuantPessoas" TValue="int?" class="form-control w-120" placeholder="Quantidade de pessoas" />
+                    <ValidationMessage For="@(() => User.QuantPessoas)" style="font-size: 15px;" />
+                </div>
             </div>
 
-            <InputNumber @bind-Value="User.QuantPessoas" TValue="int" class="form-control form-group mt-2" placeholder="Quantidade de pessoas" />
-            <ValidationMessage For="@(() => User.QuantPessoas)" />
 
             <button class="btn btn-primary w-100 mt-3" type="submit">Cadastrar</button>
         </EditForm>
@@ -77,12 +138,20 @@
         </div>
     </div>
 }
-   
 
 @code {
     public Usuario User { get; set; } = new();
     private bool MostrarModalErro { get; set; }
     private string MensagemErro { get; set; } = string.Empty;
+
+    private string SenhaInputType { get; set; } = "password";
+    private string ConfirmaSenhaInputType { get; set; } = "password";
+
+    private string SenhaIconClass => SenhaInputType == "password" ? "bi bi-eye-slash" : "bi bi-eye";
+    private string ConfirmaSenhaIconClass => ConfirmaSenhaInputType == "password" ? "bi bi-eye-slash" : "bi bi-eye";
+
+    private void ToggleSenhaVisibility() => SenhaInputType = SenhaInputType == "password" ? "text" : "password";
+    private void ToggleConfirmaSenhaVisibility() => ConfirmaSenhaInputType = ConfirmaSenhaInputType == "password" ? "text" : "password";
 
     private async Task Cadastrar()
     {

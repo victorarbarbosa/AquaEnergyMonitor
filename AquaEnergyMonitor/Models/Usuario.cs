@@ -44,9 +44,9 @@ namespace AquaEnergyMonitor.Models
         [Range(1, 2, ErrorMessage = "Selecione um tipo de perfil válido")]
         public TipoPerfilEnum Perfil { get; set; } = TipoPerfilEnum.Residencial; // Adicione esse valor
 
-        [Required(ErrorMessage = "Quantidade de pessoas é obrigatório")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Quantidade de pessoas é obrigatório")]
         [Range(1, 100, ErrorMessage = "Informe um valor maior que zero")]
-        public int QuantPessoas { get; set; } = 1;
+        public int? QuantPessoas { get; set; } = 1;
 
         public ICollection<ConsumoAgua> ConsumoAgua { get; set; }
         public ICollection<ConsumoEnergia> consumoEnergia { get; set; }

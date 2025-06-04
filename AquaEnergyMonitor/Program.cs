@@ -13,7 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddBlazoredLocalStorage();
 
 builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<SessionService>();
+builder.Services.AddSingleton<SessionService>();
 builder.Services.AddScoped<ConsumoService>();
 builder.Services.AddScoped<UsuarioService>();
 

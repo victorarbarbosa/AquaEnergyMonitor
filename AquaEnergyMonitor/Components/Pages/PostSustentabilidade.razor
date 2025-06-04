@@ -1,6 +1,7 @@
 ﻿@page "/artigo/sustentabilidade"
 @rendermode InteractiveServer
 @inject NavigationManager Navigation
+@inject IJSRuntime JS
 
 <div class="artigo-wrapper">
     <div class="artigo-content">
@@ -43,6 +44,16 @@
         <RadzenButton Click="@(args => Navigation.NavigateTo("/home"))" Text="Início" ButtonStyle="ButtonStyle.Base" />
     </div>
 </div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("eval", "window.scrollTo(0, 0)");
+        }
+    }
+}
 
 <style>
     .artigo-wrapper {
